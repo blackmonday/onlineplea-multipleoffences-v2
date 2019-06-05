@@ -1,0 +1,139 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl margin-bottom-30">
+        Your employment
+    </h1>
+        
+    <p class="govuk-body margin-bottom-30">Tell us about the company you work for.</p>
+      
+    <form action="" method="post">
+        
+        <!-- WHICH COMPANY DO YOU WORK FOR? -->
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="employment-status-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h1 class="govuk-fieldset__heading">
+                        Which company do you work for?
+                    </h1>
+                </legend>
+                <span id="how-contacted-conditional-hint" class="govuk-hint">
+                    This is the company name of your employer - this should be on your payslip
+                </span>
+                <input class="govuk-input" id="name-of-employer" name="name-of-employer" type="text">
+            </fieldset>
+        </div>        
+        
+        <!-- WHAT IS YOUR EMPLOYEE REFERENCE NUMBER -->
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="employment-status-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h1 class="govuk-fieldset__heading">
+                        What is your employee reference number (optional)
+                    </h1>
+                </legend>
+                <span id="how-contacted-conditional-hint" class="govuk-hint">
+                    Also known as employee number or payroll reference - this should be on your payslip
+                </span>
+                <input class="govuk-input" id="employee-number" name="employee-number" type="text">
+            </fieldset>
+        </div>        
+        
+        <!-- WHAT IS YOUR EMPLOYER'S ADDRESS -->
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="employment-status-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h1 class="govuk-heading-m margin-bottom-0">
+                        What is your employer’s address and telephone
+                    </h1>
+                </legend>
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Which address should I include?
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Enter the head office or where your payroll is managed
+                    </div>
+                </details>                
+                
+                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                    Address
+                </label>
+                <input class="govuk-input margin-bottom-10" id="employer-address-line-1" name="employer-address-line-1" type="text">
+                <input class="govuk-input margin-bottom-10" id="employer-address-line-2" name="employer-address-line-2" type="text">
+                <input class="govuk-input margin-bottom-15" id="employer-address-line-3" name="employer-address-line-3" type="text">
+                
+                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                    Town or city
+                </label>
+                <input class="govuk-input margin-bottom-15" id="employee-number" name="employer-address-town-or-city" type="text">
+                
+                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                    County (optional)
+                </label>
+                <input class="govuk-input margin-bottom-15" id="employee-number" name="employer-address-county" type="text">
+                
+                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                    Postcode
+                </label>
+                <input class="govuk-input margin-bottom-30" id="employee-number" name="employer-address-postcode" type="text">
+                
+                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                    Telephone (optional)
+                </label>
+                <input class="govuk-input" id="employee-number" name="employers-telephone" type="text">
+            </fieldset>
+        </div>        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="govuk-form-group">
+        
+            <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
+                Continue
+            </button>
+            <p class="govuk-body">
+                <a class="govuk-body" href="javascript:history.back()">Back</a>
+            </p>
+
+        </div>
+    </form>
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+</div>
+
+</div>
+
+{% endblock %}

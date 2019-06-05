@@ -1,0 +1,85 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/breadcrumb_startpage.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Make a plea
+    </h1>
+
+    <p class="govuk-body-l">Use this service to plead guilty or not guilty online.</p>
+        
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+    <p>To use this service you need:</p>
+        
+    <details class="govuk-details" open>
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                For all pleas
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+                <li>to be the person charged with the offence</li>
+                <li>the Single Justice Procedure notice sent to you</li>
+                <li>details of your income and any benefits</li>
+                <li>your email address</li>
+            </ul>
+        </div>
+    </details>        
+        
+    <details class="govuk-details" open>
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                Additional information needed for not guilty pleas
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+                <li>your witness’ name, address</li>
+                <li>any dates you can’t attend court</li>
+            </ul>
+        </div>
+    </details>        
+        
+        <form action="" method="post">
+            <div class="govuk-form-group">
+                <button type="submit" class="govuk-button govuk-button--start">
+                    Start now
+                </button>
+            </div>
+        </form>
+        
+    <div class="govuk-inset-text margin-top-0">
+        View this page in Welsh (<a href="">Cymraeg</a>).
+    </div>
+        
+
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-1.html" %}
+    {% include "includes/help-and-advice-2.html" %}
+    {% include "includes/help-and-advice-3.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+    
+
+</div>
+
+</div>
+
+{% endblock %}

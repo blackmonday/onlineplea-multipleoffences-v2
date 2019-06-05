@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full-width">
+
+        <div class="govuk-form-group">
+            
+            <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title margin-bottom-15" style="font-size: 36px">
+                    Your plea has been submitted
+                </h1>
+                <div class="govuk-panel__body govuk-!-font-weight-bold">
+                    <div class="margin-bottom-5" style="font-size: 19px">Your case reference is</div>
+                    <div class="margin-bottom-15" style="font-size: 24px">HDJ2123F</div>
+                    <div style="font-size: 19px">If you need to contact us, you will need to quote this case reference</div>
+                </div>
+            </div>            
+        </div>
+        
+    </div>
+        
+    <div class="govuk-grid-column-two-thirds">
+        
+        <h2 class="govuk-heading-m">Get a copy of your plea</h2>
+        
+        <p class="govuk-body"><a href="">Download a copy of your plea</a> now. You can’t do this later.</p>
+        
+        <h2 class="govuk-heading-m">What happens next?</h2>
+        
+            <ol class="govuk-list govuk-list--number">
+                <li>You'll get an email confirming you've submitted your plea</li>
+                <li>Your case will then be reviewed</li>
+                <li>You'll get a letter about it within 28 days. The letter will tell you if you need to:</li>
+                
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>pay a fine</li>
+                    <li>go to court - this would be near where the offence took place</li>
+                </ul>
+
+            </ol> 
+        
+        
+        <h2 class="govuk-heading-m">Further help</h2>
+        
+        <p class="govuk-body">Call us if you need help with this online service or the court process.</p>
+        
+        <h3 class="govuk-heading-s">By telephone</h3>
+        
+        <p class="govuk-body">0300 303 0656<br>
+            Monday to Friday 9am to 5pm<br>
+            <a href="#">Find out about call charges (opens in new window)</a></p>
+
+        <form action="" method="post">
+            <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
+                Finish
+            </button>
+        </form>
+    </div>
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -7,17 +7,56 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Online Plea - Multiple offences prototype v2
-        <span class="govuk-caption-m margin-top-10">Using GOV.UK Prototype Kit {{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
+        
+        <h1 class="govuk-heading-xl">
+            Online Plea - Multiple offences prototype v2
+            <span class="govuk-caption-m margin-top-10">Using GOV.UK Prototype Kit {{releaseVersion}}</span>
+        </h1>{{releaseVersion | log }}
 
-      <h2 class="govuk-heading-m">Coming soon</h2>
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+                This prototype is currently being built and is not yet ready for testing
+            </strong>
+        </div>
+        
+        <a href="map/start-page.html" role="button" draggable="false" class="govuk-button govuk-button--start margin-top-30">
+            Start now
+        </a>
 
-      <p>This prototype is on it's way.</p>
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+        
+        <h2 class="govuk-heading-m">Updates</h2>
+        
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+        <h3 class="govuk-heading-s">5 June 2019</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>all pages have been created</li>
+            <li>the check your answers page currently has no content</li>
+            <li>there is no validation</li>
+            <li>routing is a work in progress and not yet functional</li>
+            <li>all pages can be viewed - click on 'Start now' button then click on the green button on each page thereafter to move from page-to-page in a logical order</li>
+        </ul>
+        
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <div style="opacity: .5">
+            
+            <h3 class="govuk-heading-s">29 May 2019</h3>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>initial framework created</li>
+                <li>not all pages have been created</li>
+                <li>prototype can't yet be viewed</li>
+            </ul>
+
+        </div>
+        
     </div>
 </div>
 

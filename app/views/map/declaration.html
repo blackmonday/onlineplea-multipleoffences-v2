@@ -1,0 +1,72 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Declaration
+    </h1>  
+      
+    <form action="" method="post">
+        <div class="govuk-form-group">
+            
+            <p class="govuk-body margin-bottom-5">I confirm that:</p>
+            
+            <ul class="govuk-list govuk-list--bullet">
+                <li>I've read and understand the charges against me</li>
+                <li>I'm the person named in the Single Justice Procedure notice</li>
+                <li>the facts I've given are correct as far as I know</li>
+            </ul>            
+            
+            <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    You may be prosecuted if you make a false statement or deliberately don’t declare all relevant facts
+                </strong>
+            </div>            
+            
+            <p class="govuk-body">If you would like to change any of the information in this plea you <a href="#">can go 'Back' to make the changes.</a></p>
+            
+            <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="confirmation" name="confirmation" type="checkbox" value="I confirm">
+                    <label class="govuk-label govuk-checkboxes__label" for="confirmation">
+                        I confirm
+                    </label>
+                </div>
+            </div>
+        
+            <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
+                Continue
+            </button>
+            <p class="govuk-body">
+                <a class="govuk-body" href="javascript:history.back()">Back</a>
+            </p>
+
+        </div>
+    </form>
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+</div>
+
+</div>
+
+{% endblock %}

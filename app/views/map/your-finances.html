@@ -1,0 +1,125 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Your finances
+    </h1>
+        
+    <p class="govuk-body-l">You may provide details of your finances.</p>
+        
+    <p class="govuk-body margin-bottom-5">If you are found guilty and need to pay a penalty, then the court will decide the amount based on:</p>
+        
+    <ul class="govuk-list govuk-list--bullet">
+        <li>your finances</li>
+        <li>the seriousness of the offence</li>
+    </ul>
+        
+    <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            It is an offence to give false or misleading information
+        </strong>
+    </div>
+        
+    <p class="govuk-body">Your financial details will be kept securely and only used by court staff.</p>
+        
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        
+    <form action="" method="post">
+
+        <!-- GIVE US INCOME OR BENEFITS DETAILS-->
+        <div class="govuk-form-group income-or-benefts-details-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h1 class="govuk-fieldset__heading">
+                        Would you like to give us your income or benefits details so they can be taken into account?
+                    </h1>
+                </legend>
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="give-us-income-or-benefits-details-1" name="give-us-income-or-benefits-details" type="radio" value="Yes">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="give-us-income-or-benefits-details-2" name="give-us-income-or-benefits-details" type="radio" value="No">
+                        <label class="govuk-label govuk-radios__label" for="give-us-income-or-benefits-details-2">
+                            No
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="give-us-income-or-benefits-details-3" name="give-us-income-or-benefits-details" type="radio" value="I have no income or benefits">
+                        <label class="govuk-label govuk-radios__label" for="give-us-income-or-benefits-details-3">
+                            I have no income or benefits
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>        
+        
+        <!-- DO YOU HAVE ANY COURT FINES? -->
+        <div class="govuk-form-group court-fines-group">
+            
+            <h3 class="govuk-heading-m margin-top-60">Additional information</h3>
+            
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h1 class="govuk-fieldset__heading">
+                        Do you have any outstanding Magistrates’ Court or Crown Court fines? (optional)
+                    </h1>
+                </legend>
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="do-you-have-any-court-fines-1" name="do-you-have-any-court-fines-details" type="radio" value="Yes">
+                        <label class="govuk-label govuk-radios__label" for="do-you-have-any-court-fines-1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="do-you-have-any-court-fines-2" name="do-you-have-any-court-fines-details" type="radio" value="No">
+                        <label class="govuk-label govuk-radios__label" for="do-you-have-any-court-fines-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>        
+        
+        <div class="govuk-form-group margin-top-60">
+            <button type="submit" class="govuk-button margin-top-0 margin-bottom-15">
+                Continue
+            </button>
+            <p class="govuk-body">
+                <a class="govuk-body" href="javascript:history.back()">Back</a>
+            </p>
+        </div>
+        
+    </form>
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+</div>
+
+</div>
+
+{% endblock %}

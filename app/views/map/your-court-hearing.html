@@ -1,0 +1,267 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Your court hearing
+    </h1>  
+      
+    <form action="" method="post">
+        <div class="govuk-form-group">
+            
+            <!-- WITNESSES -->
+            <div class="govuk-form-group witness-group">
+
+                <h2 class="govuk-heading-m">Witnesses</h2>
+
+                <!-- DO YOU WANT TO BRING YOUR OWN WITNESS? -->
+                <fieldset class="govuk-fieldset" aria-describedby="do-you-want-to-bring-your-own-witness-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you want to bring your own witness?
+                        </h1>
+                    </legend>
+                    <span id="do-you-want-to-bring-your-own-witness-hint" class="govuk-hint">
+                        Someone who can give evidence in court supporting your case
+                    </span>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="do-you-want-to-bring-your-own-witness-1" name="do-you-want-to-bring-your-own-witness" type="radio" value="Yes" data-aria-controls="conditional-do-you-want-to-bring-your-own-witness-1">
+                            <label class="govuk-label govuk-radios__label" for="do-you-want-to-bring-your-own-witness-1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-do-you-want-to-bring-your-own-witness-1">
+
+                            <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="with-hint">
+                                        Enter the name and address of your witness and their age and date of birth if known
+                                    </label>
+                                    <textarea class="govuk-textarea js-character-count " id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-hint"></textarea>
+                                </div>
+
+                                <span id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                    You can enter up to 200 characters
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="do-you-want-to-bring-your-own-witness-2" name="do-you-want-to-bring-your-own-witness" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="do-you-want-to-bring-your-own-witness-2">
+                                No
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+                
+            </div>
+                
+            <!-- COURT DATES -->
+            <div class="govuk-form-group court-dates-group">
+
+                <h2 class="govuk-heading-m margin-top-60">Court dates</h2>
+
+                <!-- DATES TO AVOID -->
+                <fieldset class="govuk-fieldset" aria-describedby="dates-to-avoid-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                            Are there any dates you or your witness can not attend court?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="dates-to-avoid-1" name="dates-to-avoid" type="radio" value="Yes" data-aria-controls="conditional-dates-to-avoid-1">
+                            <label class="govuk-label govuk-radios__label" for="dates-to-avoid-1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-dates-to-avoid-1">
+
+                            <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="with-hint-2">
+                                        Enter the dates you or your witness can not attend court
+                                    </label>
+                                    <textarea class="govuk-textarea js-character-count " id="with-hint-2" name="with-hint-2" rows="5" aria-describedby="with-hint-2-hint"></textarea>
+                                </div>
+
+                                <span id="with-hint-2-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                    You can enter up to 200 characters
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="dates-to-avoid-2" name="dates-to-avoid" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="dates-to-avoid-2">
+                                No
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+                
+            </div>
+                
+            <!-- LANGUAGES -->
+            <div class="govuk-form-group languages-group">
+
+                <h2 class="govuk-heading-m margin-top-60">Languages</h2>
+
+                <!-- DO YOU NEED AN INTERPRETER? -->
+                <fieldset class="govuk-fieldset" aria-describedby="do-you-need-an-interpreter-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you need an interpreter in court?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="do-you-need-an-interpreter-1" name="do-you-need-an-interpreter" type="radio" value="Yes" data-aria-controls="conditional-do-you-need-an-interpreter-1">
+                            <label class="govuk-label govuk-radios__label" for="do-you-need-an-interpreter-1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-do-you-need-an-interpreter-1">
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="which-language">
+                                    Which language?
+                                </label>
+                                <span id="do-you-want-to-bring-your-own-witness-hint" class="govuk-hint">
+                                    You can include sign language
+                                </span>
+                                <input class="govuk-input" id="which-language" name="which-language" type="text">
+                            </div>                            
+                            
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="do-you-need-an-interpreter-2" name="do-you-need-an-interpreter" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="do-you-need-an-interpreter-2">
+                                No
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <!-- DO YOU WISH TO SPEAK WELSH? -->
+                <fieldset class="govuk-fieldset margin-top-30" aria-describedby="do-you-wish-to-speak-welsh-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                            If there is a court hearing in Wales do you wish to speak Welsh?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="do-you-wish-to-speak-welsh-1" name="do-you-wish-to-speak-welsh" type="radio" value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="do-you-need-an-interpreter-1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="do-you-wish-to-speak-welsh-2" name="do-you-wish-to-speak-welsh" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="do-you-wish-to-speak-welsh-2">
+                                No
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+                
+                
+            </div>
+                
+            <!-- DISABILITY OR ACCESS NEEDS -->
+            <div class="govuk-form-group access-needs-group">
+
+                <h2 class="govuk-heading-m margin-top-60">Disabilities or access needs</h2>
+
+                <!-- DATES TO AVOID -->
+                <fieldset class="govuk-fieldset" aria-describedby="acccess-needs-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you have a disability or access need you want the court to know about?
+                        </h1>
+                    </legend>
+                    <span id="do-you-want-to-bring-your-own-witness-hint" class="govuk-hint">
+                        For example, if you need to use a hearing loop
+                    </span>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="acccess-needs-1" name="acccess-needs" type="radio" value="Yes" data-aria-controls="conditional-acccess-needs-1">
+                            <label class="govuk-label govuk-radios__label" for="acccess-needs-1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-acccess-needs-1">
+
+                            <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="with-hint-3">
+                                        Tell the court about your disability or access needs
+                                    </label>
+                                    <textarea class="govuk-textarea js-character-count " id="with-hint-3" name="with-hint-3" rows="5" aria-describedby="with-hint-3-hint"></textarea>
+                                </div>
+
+                                <span id="with-hint-3-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                    You can enter up to 200 characters
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="acccess-needs-2" name="acccess-needs" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="acccess-needs-2">
+                                No
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+                
+            </div>
+                
+                
+                
+                
+                
+                
+                
+            <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
+                Continue
+            </button>
+            <p class="govuk-body">
+                <a class="govuk-body" href="javascript:history.back()">Back</a>
+            </p>
+
+        </div>
+    </form>
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -13,3 +13,46 @@ $govuk-global-styles: true;
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.margin-top-0 {
+    margin-top: 0px;
+}
+.margin-top-5 {
+    margin-top: 5px;
+}
+.margin-top-10 {
+    margin-top: 10px;
+}
+.margin-top-15 {
+    margin-top: 15px;
+}
+.margin-top-30 {
+    margin-top: 30px;
+}
+.margin-top-60 {
+    margin-top: 60px;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0px;
+}
+.margin-bottom-5 {
+    margin-bottom: 5px;
+}
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+.margin-bottom-60 {
+    margin-bottom: 60px;
+}
+
+.border-top-10-blue {
+    border-top: 10px solid $govuk-brand-colour;
+    padding-top: 10px;
+}

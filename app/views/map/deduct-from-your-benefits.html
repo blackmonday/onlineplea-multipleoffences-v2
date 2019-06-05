@@ -1,0 +1,113 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Deduct from your benefits
+    </h1>  
+      
+    <form action="" method="post">
+        <div class="govuk-form-group">
+        
+                <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                    <h3 class="govuk-heading-s">
+                        If you need to pay a penalty, would you like us to deduct it from your benefits?
+                    </h3>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="deduct-from-benefits-conditional-1" name="deduct-from-benefits" type="radio" value="Yes" data-aria-controls="conditional-deduct-from-benefits-conditional-1">
+                            <label class="govuk-label govuk-radios__label" for="deduct-from-benefits-conditional-1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deduct-from-benefits-conditional-1">
+                            <div class="govuk-form-group">
+                                <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-!-font-weight-bold" for="benefits-being-claimed">
+                                            Which benefits are you claiming?
+                                        </label>
+                                        <textarea class="govuk-textarea js-character-count " id="benefits-being-claimed" name="benefits-being-claimed" rows="5" aria-describedby="benefits-being-claimed-hint"></textarea>
+                                    </div>
+
+                                    <span id="benefits-being-claimed-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                        You can enter up to 200 characters
+                                    </span>
+                                </div>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-!-font-weight-bold" for="nin">
+                                        Your National Insurance number
+                                    </label>
+                                    <span id="nin-hint" class="govuk-hint">
+                                        It's on your National Insurance card, benefit letter, payslip or P60 - for example, 'AB 12 34 56 C'
+                                    </span>
+                                    <input class="govuk-input" id="nin" name="nin" type="text">
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="deduct-from-benefits-conditional-2" name="deduct-from-benefits" type="radio" value="No" data-aria-controls="conditional-deduct-from-benefits-conditional-2">
+                            <label class="govuk-label govuk-radios__label" for="deduct-from-benefits-conditional-2">
+                                No
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deduct-from-benefits-conditional-2">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body margin-bottom-5">
+                                    Please note we can deduct without your agreement if:
+                                </p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>you’ve failed to pay a penalty in the past</li>
+                                    <li>the court orders you to pay compensation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
+                Continue
+            </button>
+            <p class="govuk-body">
+                <a class="govuk-body" href="javascript:history.back()">Back</a>
+            </p>
+
+        </div>
+    </form>
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+</div>
+
+</div>
+
+{% endblock %}

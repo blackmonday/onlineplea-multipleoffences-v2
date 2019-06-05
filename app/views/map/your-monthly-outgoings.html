@@ -1,0 +1,161 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Your monthly outgoings
+    </h1>  
+      
+    <form action="" method="post">
+        <div class="govuk-form-group">
+            
+            <h2 class="govuk-heading-m">What are your monthly bills for the following?</h2>
+            
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="event-name">
+                    Accommodation
+                </label>
+                <span id="changed-name-hint" class="govuk-hint">
+                    For example, rent, mortgage or lodgings
+                </span>
+                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+            </div>            
+            
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                    Council tax
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+            </div>            
+            
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="event-name">
+                    Household bills
+                </label>
+                <span id="changed-name-hint" class="govuk-hint">
+                    For example, gas, electricity, water, insurance
+                </span>
+                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+            </div>            
+            
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="event-name">
+                    Travel expenses
+                </label>
+                <span id="changed-name-hint" class="govuk-hint">
+                    For example, fuel, car, public transport
+                </span>
+                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+            </div>            
+            
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                    Child maintenance
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+            </div>            
+            
+            
+            
+            
+            
+            
+    
+            <fieldset class="govuk-fieldset margin-top-30" aria-describedby="how-contacted-conditional-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h1 class="govuk-fieldset__heading">
+                        Any other expenses?
+                    </h1>
+                </legend>
+
+                <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="Yes" data-aria-controls="conditional-how-contacted-conditional-1">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                        
+                        <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="with-hint">
+                                    List any other monthly outgoings you believe the court should know about
+                                </label>
+                                <span id="with-hint-hint" class="govuk-hint">
+                                    For example, other court orders, Netflix, TV license
+                                </span>
+                                <textarea class="govuk-textarea js-character-count " id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-hint"></textarea>
+                            </div>
+
+                            <span id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                You can enter up to 200 characters
+                            </span>
+                        </div>                        
+                        
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                                Amount of other expenses
+                            </label>
+                            <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+                        </div>            
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="No">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
+                Continue
+            </button>
+            <p class="govuk-body">
+                <a class="govuk-body" href="javascript:history.back()">Back</a>
+            </p>
+
+        </div>
+    </form>
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+</div>
+
+</div>
+
+{% endblock %}

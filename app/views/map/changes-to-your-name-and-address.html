@@ -1,0 +1,107 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Changes to your name and address
+    </h1>
+        
+    <div class="govuk-inset-text">
+        [NAME AND ADDRESS GOES HERE]
+    </div>
+        
+    <form action="" method="post">
+        <div class="govuk-form-group">
+
+            <h2 class="govuk-heading-m">Changes to name</h2>
+
+            <fieldset class="govuk-fieldset margin-bottom-15" aria-describedby="">
+
+                <div class="govuk-form-group margin-bottom-10">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-first-name">
+                        First name
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-first-name" name="new-first-name" type="text">
+                </div>
+
+                <div class="govuk-form-group margin-bottom-10">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-last-name">
+                        Last name
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-last-name" name="new-last-name" type="text">
+                </div>
+
+            </fieldset>
+
+            <h2 class="govuk-heading-m">Changes to address</h2>
+
+            <fieldset class="govuk-fieldset margin-bottom-15" aria-describedby="">
+
+                <div class="govuk-form-group margin-bottom-10">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-address-line-1">
+                        Address
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds margin-bottom-5" id="new-address-line-1" name="new-address-line-1" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds margin-bottom-5" id="new-address-line-2" name="new-address-line-2" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds margin-bottom-5" id="new-address-line-32" name="new-address-line-3" type="text">
+                </div>
+
+                <div class="govuk-form-group margin-bottom-10">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-town-or-city">
+                        Town or city
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-town-or-city" name="new-town-or-city" type="text">
+                </div>
+
+                <div class="govuk-form-group margin-bottom-10">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-county">
+                        County (optional)
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-county" name="new-county" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-postcode">
+                        Postcode
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-postcode" name="new-postcode" type="text">
+                </div>
+
+            </fieldset>
+
+            <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
+                Continue
+            </button>
+            <p class="govuk-body">
+                <a class="govuk-body" href="javascript:history.back()">Back</a>
+            </p>
+
+        </div>
+    </form>
+        
+
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+</div>
+
+</div>
+
+{% endblock %}

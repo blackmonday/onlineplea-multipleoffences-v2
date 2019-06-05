@@ -1,0 +1,242 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Your plea
+    </h1>
+
+        <div class="govuk-inset-text">
+            <p class="govuk-body margin-bottom-5">This is your chance to respond. Please note:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>you're being charged with a criminal offence and you may wish to take legal advice before making your plea</li>
+                <li>all evidence is in the notice sent to you</li>
+                <li>if you plead guilty, we will reduce your fine by up to 33%</li>
+                <li>If you are convicted after trial your costs may be higher than if you had pleaded guilty</li>
+            </ul>
+        </div>
+        
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        
+        <h1 class="govuk-heading-l">
+            What you've been charged with
+        </h1>
+        
+        <form action="" method="post">
+            <div class="govuk-form-group">
+        
+                <!-- OFFENCE 1 -->
+                <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+                    <h2 class="govuk-heading-m">
+                        Offence 1 of 3
+                    </h2>
+
+                    <details class="govuk-details" open>
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Driving without insurance
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p class="govuk-body">On 07/03/2019 at Manchester used a motor vehicle, namely a Audi A4 VRM N15 REP, on a road, or other public place, namely Lordship Lane, Lower Broughton, when there was not in force in relation to that use such a policy of insurance or such a security in respect of third party risks as complied with the requirements of Part VI of the Road Traffic Act 1988.</p>
+
+                            <p class="govuk-body">Contrary to section 143 of the Road Traffic Act 1988</p>
+
+                            <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                        </div>
+                    </details>
+
+                    <h3 class="govuk-heading-s">
+                        How do you plead?
+                    </h3>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="offence-1-conditional-1" name="offence-1" type="radio" value="Guilty" data-aria-controls="conditional-offence-1-conditional-1">
+                            <label class="govuk-label govuk-radios__label" for="offence-1-conditional-1">
+                                Guilty
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-1-conditional-1">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">
+                                    You’re declaring you committed the offence. You will have the opportunity to give additional information to the court.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="offence-1-conditional-2" name="offence-1" type="radio" value="Not guilty" data-aria-controls="conditional-offence-1-conditional-2">
+                            <label class="govuk-label govuk-radios__label" for="offence-1-conditional-2">
+                                Not guilty
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-1-conditional-2">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">
+                                    You're declaring you didn't commit the offence so you'll need to attend court if you want to present your evidence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                <!-- OFFENCE 2 -->
+                <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+                    <h2 class="govuk-heading-m">
+                        Offence 2 of 3
+                    </h2>
+
+                    <details class="govuk-details" open>
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Driving otherwise than in accordance with a driving licence
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p class="govuk-body">On 07/03/2019 at Manchester drove a motor vehicle, namely a Audi A4 VRM N15 REP on a road, namely Lordship Lane, Lower Broughton otherwise than in accordance with a licence authorising you to drive a motor vehicle of that class.</p>
+
+                            <p class="govuk-body">Contrary to section 87(1) of the Road Traffic Act 1988</p>
+
+                            <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                        </div>
+                    </details>
+
+                    <h3 class="govuk-heading-s">
+                        How do you plead?
+                    </h3>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="offence-2-conditional-1" name="offence-2" type="radio" value="Guilty" data-aria-controls="conditional-offence-2-conditional-1">
+                            <label class="govuk-label govuk-radios__label" for="offence-2-conditional-1">
+                                Guilty
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-2-conditional-1">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">
+                                    You’re declaring you committed the offence. You will have the opportunity to give additional information to the court.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="offence-2-conditional-2" name="offence-2" type="radio" value="Not guilty" data-aria-controls="conditional-offence-2-conditional-2">
+                            <label class="govuk-label govuk-radios__label" for="offence-2-conditional-2">
+                                Not guilty
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-2-conditional-2">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">
+                                    You're declaring you didn't commit the offence so you'll need to attend court if you want to present your evidence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                 <!-- OFFENCE 3 -->
+                <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+                    <h2 class="govuk-heading-m">
+                        Offence 3 of 3
+                    </h2>
+
+                    <details class="govuk-details" open>
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Speeding - exceed 30 miles per hour on restricted road - manned camera device
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p class="govuk-body">Speeding - exceed 30 miles per hour on restricted road - automatic camera device 07/03/2019 -- On 07/03/2019 12:03hrs, at BEESTON a Audi A4 VRM N15 REP on a namely Lordship Lane, Lower Broughton at a speed exceeding 30 miles per hour.</p>
+
+                            <p class="govuk-body">**SPEED RECORDED 37MPH** </p>
+
+                            <p class="govuk-body">Contrary to section 14, 15(2) and 15(4) of the Road Traffic Regulation Act 1984 </p>
+
+                            <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                        </div>
+                    </details>
+
+                    <h3 class="govuk-heading-s">
+                        How do you plead?
+                    </h3>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="offence-3-conditional-1" name="offence-3" type="radio" value="Guilty" data-aria-controls="conditional-offence-3-conditional-1">
+                            <label class="govuk-label govuk-radios__label" for="offence-3-conditional-1">
+                                Guilty
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-3-conditional-1">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">
+                                    You’re declaring you committed the offence. You will have the opportunity to give additional information to the court.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="offence-3-conditional-2" name="offence-3" type="radio" value="Not guilty" data-aria-controls="conditional-offence-3-conditional-2">
+                            <label class="govuk-label govuk-radios__label" for="offence-3-conditional-2">
+                                Not guilty
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-3-conditional-2">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">
+                                    You're declaring you didn't commit the offence so you'll need to attend court if you want to present your evidence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                <button type="submit" class="govuk-button margin-bottom-15">
+                    Continue
+                </button>
+                <p class="govuk-body">
+                    <a class="govuk-body" href="javascript:history.back()">Back</a>
+                </p>
+
+            </div>
+        </form>
+        
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+        {% include "includes/help-and-advice-header.html" %}
+        {% include "includes/help-and-advice-2.html" %}
+        {% include "includes/help-and-advice-3.html" %}
+        {% include "includes/help-and-advice-4.html" %}
+
+    </div>
+
+</div>
+
+{% endblock %}

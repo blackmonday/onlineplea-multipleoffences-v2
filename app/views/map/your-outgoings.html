@@ -1,0 +1,77 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Your outgoings
+    </h1>  
+      
+    <form action="" method="post">
+        <div class="govuk-form-group">
+        
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--S">
+                    <h1 class="govuk-fieldset__heading govuk-!-font-weight-bold">
+                        Would you like to give details of your monthly bills?
+                    </h1>
+                </legend>
+                <span id="changed-name-hint" class="govuk-hint">
+                    Magistrates can take your outgoings into account when deciding how long you should get to pay a penalty
+                </span>
+                <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="give-details-of-monthly-bills-1" name="give-details-of-monthly-bills" type="radio" value="Yes">
+                        <label class="govuk-label govuk-radios__label" for="give-details-of-monthly-bills-1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="give-details-of-monthly-bills-2" name="give-details-of-monthly-bills" type="radio" value="No">
+                        <label class="govuk-label govuk-radios__label" for="give-details-of-monthly-bills-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            
+            
+            
+            
+            
+            
+            
+            
+            <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
+                Continue
+            </button>
+            <p class="govuk-body">
+                <a class="govuk-body" href="javascript:history.back()">Back</a>
+            </p>
+
+        </div>
+    </form>
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+</div>
+
+</div>
+
+{% endblock %}

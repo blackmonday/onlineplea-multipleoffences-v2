@@ -1,0 +1,108 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make a plea
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/phase-banner.html" %}
+{% include "includes/breadcrumb_back.html" %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Enter other details
+    </h1>
+        
+    <form action="" method="post">
+            <div class="govuk-form-group">
+        
+            <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+                <h2 class="govuk-heading-s margin-bottom-0">
+                    Date of birth
+                </h2>
+                <span id="dob-hint" class="govuk-hint margin-bottom-5">
+                    For example, 27 3 2019
+                </span>
+                <div class="govuk-date-input margin-bottom-30" id="dob">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="dob-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="dob-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="dob-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="govuk-fieldset margin-bottom-30" aria-describedby="">
+
+                <div class="govuk-form-group margin-bottom-10">
+                    <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="email-address">
+                        Email address
+                    </label>
+                    <span id="dob-hint" class="govuk-hint margin-bottom-5">
+                        We will automatically email you confirmation when the plea is submitted
+                    </span>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="email-address" name="email-address" type="text">
+                </div>
+
+            </fieldset>
+
+            <fieldset class="govuk-fieldset margin-bottom-30" aria-describedby="">
+
+                <div class="govuk-form-group margin-bottom-10">
+                    <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="contact-number">
+                        Contact number (optional)
+                    </label>
+                    <span id="dob-hint" class="govuk-hint margin-bottom-5">
+                        The court may need to contact you so they can resolve your case quickly
+                    </span>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-number" name="contact-number" type="text">
+                </div>
+
+            </fieldset>
+
+            <button type="submit" class="govuk-button margin-bottom-15">
+                Continue
+            </button>
+            <p class="govuk-body">
+                <a class="govuk-body" href="javascript:history.back()">Back</a>
+            </p>
+
+        </div>
+    </form>  
+        
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    {% include "includes/help-and-advice-header.html" %}
+    {% include "includes/help-and-advice-4.html" %}
+
+</div>
+
+</div>
+
+{% endblock %}
