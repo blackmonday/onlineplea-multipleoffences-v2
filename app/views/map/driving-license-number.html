@@ -31,12 +31,12 @@
 
                 <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
-                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                        <input class="govuk-radios__input" id="how-contacted-1" name="how-contacted" type="radio" value="Yes" data-aria-controls="conditional-how-contacted-1" {{ checked('how-contacted','Yes') }}>
+                        <label class="govuk-label govuk-radios__label" for="conditional-how-contacted-1">
                             Yes
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-1">
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-email">
                                 Your UK driving license number
@@ -44,29 +44,29 @@
                             <span id="how-contacted-conditional-hint" class="govuk-hint">
                                 This can be found in section 5 of your driving licence phototcard
                             </span>
-                            <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+                            <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false" value="{{ data['contact-by-email'] }}">
                         </div>
                     </div>
 
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                        <input class="govuk-radios__input" id="how-contacted-2" name="how-contacted" type="radio" value="No" data-aria-controls="conditional-how-contacted-2" {{ checked('how-contacted','No') }}>
+                        <label class="govuk-label govuk-radios__label" for="conditional-how-contacted-2">
                             No
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-                        <div class="govuk-character-count" data-module="character-count" data-maxlength="500">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-2">
+                        <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-!-font-weight-bold" for="with-hint">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="license-type">
                                     Tell us what kind of drivers license you hold
                                 </label>
-                                <textarea class="govuk-textarea js-character-count " id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-hint"></textarea>
+                                <textarea class="govuk-textarea js-character-count " id="license-type" name="license-type" rows="5" aria-describedby="license-type-hint">{{ data['license-type'] }}</textarea>
                             </div>
 
-                            <span id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
-                                You can enter up to 500 characters
+                            <span id="license-type-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                You can enter up to 200 characters
                             </span>
-                        </div>                          
+                        </div>                    
                     </div>
 
                     <div class="margin-top-30">

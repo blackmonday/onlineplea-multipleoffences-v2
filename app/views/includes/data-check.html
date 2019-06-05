@@ -1,0 +1,95 @@
+<style>
+    .data-check {
+
+    }
+    .data-check p {
+        font-size: 10px;
+        color: #6f777b;
+    }
+    .data-check-column {
+        float: left;
+    }
+
+    .data-check-left {
+        width: 25%;
+    }
+    .data-check-left p {
+        padding-right: 10px;
+    }
+
+    .data-check-right {
+        width: 74%;
+        padding-left: 1%;
+    }
+    
+    .data-check-column p {
+        height: 14px;
+        overflow: hidden;
+    }
+    
+    /* Clear floats after the columns */
+    .data-check-row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .data-check-column p {
+        border-top:1px solid #bfc1c3;
+        padding: 2px 0;
+    }
+
+</style>
+
+<div class="data-check margin-bottom-30">
+    
+    <p class="govuk-!-font-weight-bold margin-bottom-5">Data check</p>
+    <p class="margin-bottom-0">&nbsp;</p>
+
+    <div class="data-check-row">
+        <div class="data-check-column data-check-left">
+            <p class="margin-bottom-0">Defendant's first name</p>
+            <p class="margin-bottom-0">Defendant's last name</p>
+            <p class="margin-bottom-0">Defendant's address line 1</p>
+            <p class="margin-bottom-0">Defendant's address line 2</p>
+            <p class="margin-bottom-0">Defendant's address line 3</p>
+            <p class="margin-bottom-0">Defendant's address county</p>
+            <p class="margin-bottom-0">Defendant's address town or city</p>
+            <p class="margin-bottom-0">Defendant's address postcode</p>
+            <p class="margin-bottom-0">&nbsp;</p>
+            
+            <p class="margin-bottom-0">New defendant's first name</p>
+            <p class="margin-bottom-0">New defendant's last name</p>
+            <p class="margin-bottom-0">New defendant's address line 1</p>
+            <p class="margin-bottom-0">New defendant's address line 2</p>
+            <p class="margin-bottom-0">New defendant's address line 3</p>
+            <p class="margin-bottom-0">New defendant's address county</p>
+            <p class="margin-bottom-0">New defendant's address town or city</p>
+            <p class="margin-bottom-0">New defendant's address postcode</p>
+            <p class="margin-bottom-0">&nbsp;</p>
+            
+        </div>
+        <div class="data-check-column data-check-right">
+            <p class="margin-bottom-0">{{data['defendant-first-name']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['defendant-last-name']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['defendant-address-line-1']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['defendant-address-line-2']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['defendant-address-line-3']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['defendant-address-line-4']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['defendant-address-line-5']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['defendant-address-postcode']}}&nbsp;</p>
+            <p class="margin-bottom-0">&nbsp;</p>
+            
+            <p class="margin-bottom-0">{{data['new-defendant-first-name']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['new-defendant-last-name']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['new-defendant-address-line-1']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['new-defendant-address-line-2']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['new-defendant-address-line-3']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['new-defendant-address-line-4']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['new-defendant-address-line-5']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['new-defendant-address-postcode']}}&nbsp;</p>
+            <p class="margin-bottom-0">&nbsp;</p>
+            
+        </div>
+    </div>
+    
+</div>

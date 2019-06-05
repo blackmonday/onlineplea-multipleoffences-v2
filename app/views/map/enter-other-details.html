@@ -34,7 +34,7 @@
                             <label class="govuk-label govuk-date-input__label" for="dob-day">
                                 Day
                             </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}">
                         </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -42,7 +42,7 @@
                             <label class="govuk-label govuk-date-input__label" for="dob-month">
                                 Month
                             </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}">
                         </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -50,7 +50,7 @@
                             <label class="govuk-label govuk-date-input__label" for="dob-year">
                                 Year
                             </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}">
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     <span id="dob-hint" class="govuk-hint margin-bottom-5">
                         We will automatically email you confirmation when the plea is submitted
                     </span>
-                    <input class="govuk-input govuk-!-width-two-thirds" id="email-address" name="email-address" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds" id="email-address" name="email-address" type="text"  value="{{ data['email-address'] }}">
                 </div>
 
             </fieldset>
@@ -79,7 +79,7 @@
                     <span id="dob-hint" class="govuk-hint margin-bottom-5">
                         The court may need to contact you so they can resolve your case quickly
                     </span>
-                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-number" name="contact-number" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-number" name="contact-number" type="text" value="{{ data['contact-number'] }}">
                 </div>
 
             </fieldset>

@@ -10,6 +10,29 @@ module.exports = router
 /* ********** */
 /* START PAGE */
 router.post('/map/start-page', function (req, res) {
+    
+    /* DEFENDANTS DETAILS */
+    req.session.data['defendant-first-name'] = "Sam"
+    req.session.data['defendant-last-name'] = "Smith"
+    req.session.data['defendant-address-line-1'] = "38A Baker Street"
+    req.session.data['defendant-address-line-2'] = "London"
+    req.session.data['defendant-address-line-3'] = ""
+    req.session.data['defendant-address-line-4'] = ""
+    req.session.data['defendant-address-line-5'] = ""
+    req.session.data['defendant-address-postcode'] = "W1 7SX"
+    /*
+    req.session.data['home-telephone'] = "0123456789"
+    req.session.data['mobile'] = "0123456789"
+    req.session.data['additional-number'] = "0123456789"
+    req.session.data['email-1'] = "abc@xyz.com"
+    req.session.data['email-2'] = "xyz@abc.com"
+    */
+    req.session.data['dob-day'] = "23"
+    req.session.data['dob-month'] = "8"
+    req.session.data['dob-year'] = "1988"
+    /*
+    req.session.data['nin'] = "AB 12 34 56 C"
+    */
         
     res.redirect('/map/find-your-case')
         
@@ -37,10 +60,10 @@ router.post('/map/check-your-name-and-address', function (req, res) {
         res.redirect('/map/enter-other-details')
     } else if (are_these_details_correct == "No") {
         res.redirect('/map/changes-to-your-name-and-address')
+    } else if (are_these_details_correct == "") {
+        res.redirect('/map/check-your-name-and-address')
     }
-    
-    
-        
+            
 });
 
 /* ******************************** */

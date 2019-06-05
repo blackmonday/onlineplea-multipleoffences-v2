@@ -7,8 +7,37 @@
 
 {% block content %}
 
+<script>
+    window.onload = function() {
+        
+        /* ************* */
+        /* ************* */
+        /* ************* */
+        /* ADDRESS CHECK */
+        var defendantAddressLine1 = document.getElementById('defendant-address-line-1').innerHTML;
+        var defendantAddressLine2 = document.getElementById('defendant-address-line-2').innerHTML;
+        var defendantAddressLine3 = document.getElementById('defendant-address-line-3').innerHTML;
+        var defendantAddressLine4 = document.getElementById('defendant-address-line-4').innerHTML;
+        var defendantAddressPostcode = document.getElementById('defendant-address-postcode').innerHTML;
+        
+        if (defendantAddressLine1 == "<br>") {
+            document.getElementById('defendant-address-line-1').style.display = "none"
+        }
+        if (defendantAddressLine2 == "<br>") {
+            document.getElementById('defendant-address-line-2').style.display = "none"
+        }
+        if (defendantAddressLine3 == "<br>") {
+            document.getElementById('defendant-address-line-3').style.display = "none"
+        }
+        if (defendantAddressLine4 == "<br>") {
+            document.getElementById('defendant-address-line-4').style.display = "none"
+        }
+    }
+</script>
+
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -19,7 +48,12 @@
     </h1>
         
     <div class="govuk-inset-text">
-        [NAME AND ADDRESS GOES HERE]
+        <strong>{{data['defendant-first-name']}} <span style="text-transform: uppercase">{{data['defendant-last-name']}}</span></strong><br>
+        <span id="defendant-address-line-1">{{data['defendant-address-line-1']}}<br></span>
+        <span id="defendant-address-line-2">{{data['defendant-address-line-2']}}<br></span>
+        <span id="defendant-address-line-3">{{data['defendant-address-line-3']}}<br></span>
+        <span id="defendant-address-line-4">{{data['defendant-address-line-4']}}<br></span>
+        <span id="defendant-address-postcode">{{data['defendant-address-postcode']}}</span>
     </div>
         
     <form action="" method="post">
@@ -30,17 +64,17 @@
             <fieldset class="govuk-fieldset margin-bottom-15" aria-describedby="">
 
                 <div class="govuk-form-group margin-bottom-10">
-                    <label class="govuk-label govuk-!-font-weight-bold" for="new-first-name">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-defendant-first-name">
                         First name
                     </label>
-                    <input class="govuk-input govuk-!-width-two-thirds" id="new-first-name" name="new-first-name" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-defendant-first-name" name="new-defendant-first-name" type="text" value="{{ data['new-defendant-first-name'] }}">
                 </div>
 
                 <div class="govuk-form-group margin-bottom-10">
-                    <label class="govuk-label govuk-!-font-weight-bold" for="new-last-name">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-defendant-last-name">
                         Last name
                     </label>
-                    <input class="govuk-input govuk-!-width-two-thirds" id="new-last-name" name="new-last-name" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-defendant-last-name" name="new-defendant-last-name" type="text" value="{{ data['new-defendant-last-name'] }}">
                 </div>
 
             </fieldset>
@@ -50,33 +84,33 @@
             <fieldset class="govuk-fieldset margin-bottom-15" aria-describedby="">
 
                 <div class="govuk-form-group margin-bottom-10">
-                    <label class="govuk-label govuk-!-font-weight-bold" for="new-address-line-1">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-defendant-address-line-1">
                         Address
                     </label>
-                    <input class="govuk-input govuk-!-width-two-thirds margin-bottom-5" id="new-address-line-1" name="new-address-line-1" type="text">
-                    <input class="govuk-input govuk-!-width-two-thirds margin-bottom-5" id="new-address-line-2" name="new-address-line-2" type="text">
-                    <input class="govuk-input govuk-!-width-two-thirds margin-bottom-5" id="new-address-line-32" name="new-address-line-3" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds margin-bottom-5" id="new-defendant-address-line-1" name="new-defendant-address-line-1" type="text" value="{{ data['new-defendant-address-line-1'] }}">
+                    <input class="govuk-input govuk-!-width-two-thirds margin-bottom-5" id="new-defendant-address-line-2" name="new-defendant-address-line-2" type="text" value="{{ data['new-defendant-address-line-2'] }}">
+                    <input class="govuk-input govuk-!-width-two-thirds margin-bottom-5" id="new-defendant-address-line-3" name="new-defendant-address-line-3" type="text" value="{{ data['new-defendant-address-line-3'] }}">
                 </div>
 
                 <div class="govuk-form-group margin-bottom-10">
-                    <label class="govuk-label govuk-!-font-weight-bold" for="new-town-or-city">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-defendant-address-line-4">
                         Town or city
                     </label>
-                    <input class="govuk-input govuk-!-width-two-thirds" id="new-town-or-city" name="new-town-or-city" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-defendant-address-line-4" name="new-defendant-address-line-4" type="text" value="{{ data['new-defendant-address-line-4'] }}">
                 </div>
 
                 <div class="govuk-form-group margin-bottom-10">
-                    <label class="govuk-label govuk-!-font-weight-bold" for="new-county">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-defendant-address-line-5">
                         County (optional)
                     </label>
-                    <input class="govuk-input govuk-!-width-two-thirds" id="new-county" name="new-county" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-defendant-address-line-5" name="new-defendant-address-line-5" type="text" value="{{ data['new-defendant-address-line-5'] }}">
                 </div>
 
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-!-font-weight-bold" for="new-postcode">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="new-defendant-address-postcode">
                         Postcode
                     </label>
-                    <input class="govuk-input govuk-!-width-two-thirds" id="new-postcode" name="new-postcode" type="text">
+                    <input class="govuk-input govuk-!-width-two-thirds" id="new-defendant-address-postcode" name="new-defendant-address-postcode" type="text" value="{{ data['new-defendant-address-postcode'] }}">
                 </div>
 
             </fieldset>
