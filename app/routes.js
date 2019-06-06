@@ -33,6 +33,32 @@ router.post('/map/start-page', function (req, res) {
     /*
     req.session.data['nin'] = "AB 12 34 56 C"
     */
+    
+    /* ********* */
+    /* ********* */
+    /* OFFENCE 1 */
+    req.session.data['offence-1-title'] = "Driving without insurance"
+    req.session.data['offence-1-wording-1'] = "On 07/03/2019 at Manchester used a motor vehicle, namely a Audi A4 VRM N15 REP, on a road, or other public place, namely Lordship Lane, Lower Broughton, when there was not in force in relation to that use such a policy of insurance or such a security in respect of third party risks as complied with the requirements of Part VI of the Road Traffic Act 1988."
+    req.session.data['offence-1-wording-2'] = "Contrary to section 143 of the Road Traffic Act 1988"
+    req.session.data['offence-1-wording-3'] = "This offence carries penalty points"
+    
+    /* ********* */
+    /* ********* */
+    /* OFFENCE 2 */
+    req.session.data['offence-2-title'] = "Driving otherwise than in accordance with a driving licence"
+    req.session.data['offence-2-wording-1'] = "On 07/03/2019 at Manchester drove a motor vehicle, namely a Audi A4 VRM N15 REP on a road, namely Lordship Lane, Lower Broughton otherwise than in accordance with a licence authorising you to drive a motor vehicle of that class."
+    req.session.data['offence-2-wording-2'] = "Contrary to section 87(1) of the Road Traffic Act 1988"
+    req.session.data['offence-2-wording-3'] = "This offence carries penalty points"
+
+    /* ********* */
+    /* ********* */
+    /* OFFENCE 3 */
+    req.session.data['offence-3-title'] = "Speeding - exceed 30 miles per hour on restricted road - manned camera device"
+    req.session.data['offence-3-wording-1'] = "Speeding - exceed 30 miles per hour on restricted road - automatic camera device 07/03/2019 -- On 07/03/2019 12:03hrs, at BEESTON a Audi A4 VRM N15 REP on a namely Lordship Lane, Lower Broughton at a speed exceeding 30 miles per hour."
+    req.session.data['offence-3-wording-2'] = "**SPEED RECORDED 37MPH**"
+    req.session.data['offence-3-wording-3'] = "Contrary to section 14, 15(2) and 15(4) of the Road Traffic Regulation Act 1984"
+    req.session.data['offence-3-wording-4'] = "This offence carries penalty points"
+                            
         
     res.redirect('/map/find-your-case')
         
@@ -72,6 +98,40 @@ router.post('/map/check-your-name-and-address', function (req, res) {
 /* CHANGES TO YOUR NAME AND ADDRESS */
 router.post('/map/changes-to-your-name-and-address', function (req, res) {
         
+    var new_defendant_first_name = req.session.data['new-defendant-first-name']
+    var new_defendant_last_name = req.session.data['new-defendant-last-name']
+    var new_defendant_address_line_1 = req.session.data['new-defendant-address-line-1']
+    var new_defendant_address_line_2 = req.session.data['new-defendant-address-line-2']
+    var new_defendant_address_line_3 = req.session.data['new-defendant-address-line-3']
+    var new_defendant_address_line_4 = req.session.data['new-defendant-address-line-4']
+    var new_defendant_address_line_5 = req.session.data['new-defendant-address-line-5']
+    var new_defendant_address_postcode = req.session.data['new-defendant-address-postcode']
+
+    if (new_defendant_first_name != "") {
+        req.session.data['defendant-first-name'] = new_defendant_first_name
+    }
+    if (new_defendant_last_name != "") {
+        req.session.data['defendant-last-name'] = new_defendant_last_name
+    }
+    if (new_defendant_address_line_1 != "") {
+        req.session.data['defendant-address-line-1'] = new_defendant_address_line_1
+    }
+    if (new_defendant_address_line_2 != "") {
+        req.session.data['defendant-address-line-2'] = new_defendant_address_line_2
+    }
+    if (new_defendant_address_line_3 != "") {
+        req.session.data['defendant-address-line-3'] = new_defendant_address_line_3
+    }
+    if (new_defendant_address_line_4 != "") {
+        req.session.data['defendant-address-line-4'] = new_defendant_address_line_4
+    }
+    if (new_defendant_address_line_5 != "") {
+        req.session.data['defendant-address-line-5'] = new_defendant_address_line_5
+    }
+    if (new_defendant_address_postcode != "") {
+        req.session.data['defendant-address-postcode'] = new_defendant_address_postcode
+    }
+    
     res.redirect('/map/enter-other-details')
         
 });
@@ -220,6 +280,27 @@ router.post('/map/your-outgoings', function (req, res) {
 /* ********************** */
 /* YOUR MONTHLY OUTGOINGS */
 router.post('/map/your-monthly-outgoings', function (req, res) {
+    
+    var any_other_expenses = req.session.data['any-other-expenses'];
+    
+    if (any_other_expenses == "Yes") {
+        var total = 
+            Number(req.session.data['accomodation']) + 
+            Number(req.session.data['council-tax']) + 
+            Number(req.session.data['household-bills']) + 
+            Number(req.session.data['travel-expenses']) + 
+            Number(req.session.data['child-maintenance']) + 
+            Number(req.session.data['amount-of-other-expenses'])
+    } else {
+        var total = 
+            Number(req.session.data['accomodation']) + 
+            Number(req.session.data['council-tax']) + 
+            Number(req.session.data['household-bills']) + 
+            Number(req.session.data['travel-expenses']) + 
+            Number(req.session.data['child-maintenance'])
+    }
+
+    req.session.data['total-amount-of-all-expenses'] = parseFloat(total).toFixed(2)
         
     res.redirect('/map/cya')
         
@@ -240,8 +321,20 @@ router.post('/map/cya', function (req, res) {
 /* *********** */
 /* DECLARATION */
 router.post('/map/declaration', function (req, res) {
+
+    var declaration = req.session.data['declaration'];
+    
+    if (declaration == "I confirm") {
+        req.session.data['declaration-query'] = ""
+        res.redirect('/map/confirmation')
         
-    res.redirect('/map/confirmation')
+    } else {
+        req.session.data['declaration-query'] = "error"
+        res.redirect('/map/declaration')
+        
+    }
+    
+    //res.redirect('/map/confirmation')
         
 });
 

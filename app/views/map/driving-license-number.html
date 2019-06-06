@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -31,30 +32,30 @@
 
                 <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-1" name="how-contacted" type="radio" value="Yes" data-aria-controls="conditional-how-contacted-1" {{ checked('how-contacted','Yes') }}>
-                        <label class="govuk-label govuk-radios__label" for="conditional-how-contacted-1">
+                        <input class="govuk-radios__input" id="do-you-have-a-dl-1" name="do-you-have-a-dl" type="radio" value="Yes" data-aria-controls="conditional-do-you-have-a-dl-1" {{ checked('do-you-have-a-dl','Yes') }}>
+                        <label class="govuk-label govuk-radios__label" for="conditional-do-you-have-a-dl-1">
                             Yes
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-1">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-do-you-have-a-dl-1">
                         <div class="govuk-form-group">
-                            <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-email">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="dl-number">
                                 Your UK driving license number
                             </label>
-                            <span id="how-contacted-conditional-hint" class="govuk-hint">
+                            <span id="dl-number-conditional-hint" class="govuk-hint">
                                 This can be found in section 5 of your driving licence phototcard
                             </span>
-                            <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false" value="{{ data['contact-by-email'] }}">
+                            <input class="govuk-input govuk-!-width-two-thirds" id="dl-number" name="dl-number" type="text" spellcheck="false" value="{{ data['dl-number'] }}">
                         </div>
                     </div>
 
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-2" name="how-contacted" type="radio" value="No" data-aria-controls="conditional-how-contacted-2" {{ checked('how-contacted','No') }}>
-                        <label class="govuk-label govuk-radios__label" for="conditional-how-contacted-2">
+                        <input class="govuk-radios__input" id="do-you-have-a-dl-2" name="do-you-have-a-dl" type="radio" value="No" data-aria-controls="conditional-do-you-have-a-dl-2" {{ checked('do-you-have-a-dl','No') }}>
+                        <label class="govuk-label govuk-radios__label" for="conditional-do-you-have-a-dl-2">
                             No
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-2">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-do-you-have-a-dl-2">
                         <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-!-font-weight-bold" for="license-type">

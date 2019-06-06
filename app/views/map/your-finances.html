@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -51,19 +52,19 @@
                 </legend>
                 <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="give-us-income-or-benefits-details-1" name="give-us-income-or-benefits-details" type="radio" value="Yes">
+                        <input class="govuk-radios__input" id="give-us-income-or-benefits-details-1" name="give-us-income-or-benefits-details" type="radio" value="Yes" {{ checked('give-us-income-or-benefits-details','Yes') }}>
                         <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
                             Yes
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="give-us-income-or-benefits-details-2" name="give-us-income-or-benefits-details" type="radio" value="No">
+                        <input class="govuk-radios__input" id="give-us-income-or-benefits-details-2" name="give-us-income-or-benefits-details" type="radio" value="No" {{ checked('give-us-income-or-benefits-details','No') }}>
                         <label class="govuk-label govuk-radios__label" for="give-us-income-or-benefits-details-2">
                             No
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="give-us-income-or-benefits-details-3" name="give-us-income-or-benefits-details" type="radio" value="I have no income or benefits">
+                        <input class="govuk-radios__input" id="give-us-income-or-benefits-details-3" name="give-us-income-or-benefits-details" type="radio" value="I have no income or benefits" {{ checked('give-us-income-or-benefits-details','I have no income or benefits') }}>
                         <label class="govuk-label govuk-radios__label" for="give-us-income-or-benefits-details-3">
                             I have no income or benefits
                         </label>
@@ -85,13 +86,13 @@
                 </legend>
                 <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="do-you-have-any-court-fines-1" name="do-you-have-any-court-fines-details" type="radio" value="Yes">
+                        <input class="govuk-radios__input" id="do-you-have-any-court-fines-1" name="do-you-have-any-court-fines" type="radio" value="Yes" {{ checked('do-you-have-any-court-fines','Yes') }}>
                         <label class="govuk-label govuk-radios__label" for="do-you-have-any-court-fines-1">
                             Yes
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="do-you-have-any-court-fines-2" name="do-you-have-any-court-fines-details" type="radio" value="No">
+                        <input class="govuk-radios__input" id="do-you-have-any-court-fines-2" name="do-you-have-any-court-fines" type="radio" value="No" {{ checked('do-you-have-any-court-fines','No') }}>
                         <label class="govuk-label govuk-radios__label" for="do-you-have-any-court-fines-2">
                             No
                         </label>

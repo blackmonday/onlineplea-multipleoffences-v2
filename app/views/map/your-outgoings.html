@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -32,13 +33,13 @@
                 </span>
                 <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="give-details-of-monthly-bills-1" name="give-details-of-monthly-bills" type="radio" value="Yes">
+                        <input class="govuk-radios__input" id="give-details-of-monthly-bills-1" name="give-details-of-monthly-bills" type="radio" value="Yes" {{ checked('give-details-of-monthly-bills','Yes') }}>
                         <label class="govuk-label govuk-radios__label" for="give-details-of-monthly-bills-1">
                             Yes
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="give-details-of-monthly-bills-2" name="give-details-of-monthly-bills" type="radio" value="No">
+                        <input class="govuk-radios__input" id="give-details-of-monthly-bills-2" name="give-details-of-monthly-bills" type="radio" value="No" {{ checked('give-details-of-monthly-bills','No') }}>
                         <label class="govuk-label govuk-radios__label" for="give-details-of-monthly-bills-2">
                             No
                         </label>

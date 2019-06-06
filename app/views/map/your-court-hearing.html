@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -38,7 +39,7 @@
                     </span>
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="do-you-want-to-bring-your-own-witness-1" name="do-you-want-to-bring-your-own-witness" type="radio" value="Yes" data-aria-controls="conditional-do-you-want-to-bring-your-own-witness-1">
+                            <input class="govuk-radios__input" id="do-you-want-to-bring-your-own-witness-1" name="do-you-want-to-bring-your-own-witness" type="radio" value="Yes" data-aria-controls="conditional-do-you-want-to-bring-your-own-witness-1" {{ checked('do-you-want-to-bring-your-own-witness','Yes') }}>
                             <label class="govuk-label govuk-radios__label" for="do-you-want-to-bring-your-own-witness-1">
                                 Yes
                             </label>
@@ -47,20 +48,20 @@
 
                             <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
                                 <div class="govuk-form-group">
-                                    <label class="govuk-label" for="with-hint">
+                                    <label class="govuk-label" for="witness-details">
                                         Enter the name and address of your witness and their age and date of birth if known
                                     </label>
-                                    <textarea class="govuk-textarea js-character-count " id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-hint"></textarea>
+                                    <textarea class="govuk-textarea js-character-count " id="witness-details" name="witness-details" rows="5" aria-describedby="witness-details">{{data['witness-details']}}</textarea>
                                 </div>
 
-                                <span id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                <span id="witness-details-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                                     You can enter up to 200 characters
                                 </span>
                             </div>
 
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="do-you-want-to-bring-your-own-witness-2" name="do-you-want-to-bring-your-own-witness" type="radio" value="No">
+                            <input class="govuk-radios__input" id="do-you-want-to-bring-your-own-witness-2" name="do-you-want-to-bring-your-own-witness" type="radio" value="No" {{ checked('do-you-want-to-bring-your-own-witness','No') }}>
                             <label class="govuk-label govuk-radios__label" for="do-you-want-to-bring-your-own-witness-2">
                                 No
                             </label>
@@ -85,7 +86,7 @@
                     </legend>
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="dates-to-avoid-1" name="dates-to-avoid" type="radio" value="Yes" data-aria-controls="conditional-dates-to-avoid-1">
+                            <input class="govuk-radios__input" id="dates-to-avoid-1" name="dates-to-avoid" type="radio" value="Yes" data-aria-controls="conditional-dates-to-avoid-1" {{ checked('dates-to-avoid','Yes') }}>
                             <label class="govuk-label govuk-radios__label" for="dates-to-avoid-1">
                                 Yes
                             </label>
@@ -94,20 +95,20 @@
 
                             <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
                                 <div class="govuk-form-group">
-                                    <label class="govuk-label" for="with-hint-2">
+                                    <label class="govuk-label" for="which-dates-to-avoid">
                                         Enter the dates you or your witness can not attend court
                                     </label>
-                                    <textarea class="govuk-textarea js-character-count " id="with-hint-2" name="with-hint-2" rows="5" aria-describedby="with-hint-2-hint"></textarea>
+                                    <textarea class="govuk-textarea js-character-count " id="which-dates-to-avoid" name="which-dates-to-avoid" rows="5" aria-describedby="which-dates-to-avoid-hint">{{data['which-dates-to-avoid']}}</textarea>
                                 </div>
 
-                                <span id="with-hint-2-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                <span id="which-dates-to-avoid-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                                     You can enter up to 200 characters
                                 </span>
                             </div>
 
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="dates-to-avoid-2" name="dates-to-avoid" type="radio" value="No">
+                            <input class="govuk-radios__input" id="dates-to-avoid-2" name="dates-to-avoid" type="radio" value="No" {{ checked('dates-to-avoid','No') }}>
                             <label class="govuk-label govuk-radios__label" for="dates-to-avoid-2">
                                 No
                             </label>
@@ -132,7 +133,7 @@
                     </legend>
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="do-you-need-an-interpreter-1" name="do-you-need-an-interpreter" type="radio" value="Yes" data-aria-controls="conditional-do-you-need-an-interpreter-1">
+                            <input class="govuk-radios__input" id="do-you-need-an-interpreter-1" name="do-you-need-an-interpreter" type="radio" value="Yes" data-aria-controls="conditional-do-you-need-an-interpreter-1" {{ checked('do-you-need-an-interpreter','Yes') }}>
                             <label class="govuk-label govuk-radios__label" for="do-you-need-an-interpreter-1">
                                 Yes
                             </label>
@@ -146,12 +147,12 @@
                                 <span id="do-you-want-to-bring-your-own-witness-hint" class="govuk-hint">
                                     You can include sign language
                                 </span>
-                                <input class="govuk-input" id="which-language" name="which-language" type="text">
+                                <input class="govuk-input" id="which-language" name="which-language" type="text" value="{{data['which-language']}}">
                             </div>                            
                             
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="do-you-need-an-interpreter-2" name="do-you-need-an-interpreter" type="radio" value="No">
+                            <input class="govuk-radios__input" id="do-you-need-an-interpreter-2" name="do-you-need-an-interpreter" type="radio" value="No" {{ checked('do-you-need-an-interpreter','No') }}>
                             <label class="govuk-label govuk-radios__label" for="do-you-need-an-interpreter-2">
                                 No
                             </label>
@@ -169,13 +170,13 @@
                     </legend>
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="do-you-wish-to-speak-welsh-1" name="do-you-wish-to-speak-welsh" type="radio" value="Yes">
+                            <input class="govuk-radios__input" id="do-you-wish-to-speak-welsh-1" name="do-you-wish-to-speak-welsh" type="radio" value="Yes" {{ checked('do-you-wish-to-speak-welsh','Yes') }}>
                             <label class="govuk-label govuk-radios__label" for="do-you-need-an-interpreter-1">
                                 Yes
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="do-you-wish-to-speak-welsh-2" name="do-you-wish-to-speak-welsh" type="radio" value="No">
+                            <input class="govuk-radios__input" id="do-you-wish-to-speak-welsh-2" name="do-you-wish-to-speak-welsh" type="radio" value="No" {{ checked('do-you-wish-to-speak-welsh','No') }}>
                             <label class="govuk-label govuk-radios__label" for="do-you-wish-to-speak-welsh-2">
                                 No
                             </label>
@@ -204,7 +205,7 @@
                     </span>
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="acccess-needs-1" name="acccess-needs" type="radio" value="Yes" data-aria-controls="conditional-acccess-needs-1">
+                            <input class="govuk-radios__input" id="acccess-needs-1" name="acccess-needs" type="radio" value="Yes" data-aria-controls="conditional-acccess-needs-1" {{ checked('acccess-needs','Yes') }}>
                             <label class="govuk-label govuk-radios__label" for="acccess-needs-1">
                                 Yes
                             </label>
@@ -213,20 +214,20 @@
 
                             <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
                                 <div class="govuk-form-group">
-                                    <label class="govuk-label" for="with-hint-3">
+                                    <label class="govuk-label" for="which-acccess-needs">
                                         Tell the court about your disability or access needs
                                     </label>
-                                    <textarea class="govuk-textarea js-character-count " id="with-hint-3" name="with-hint-3" rows="5" aria-describedby="with-hint-3-hint"></textarea>
+                                    <textarea class="govuk-textarea js-character-count " id="which-acccess-needs" name="which-acccess-needs" rows="5" aria-describedby="which-acccess-needs-hint">{{data['which-acccess-needs']}}</textarea>
                                 </div>
 
-                                <span id="with-hint-3-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                <span id="which-acccess-needs-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                                     You can enter up to 200 characters
                                 </span>
                             </div>
 
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="acccess-needs-2" name="acccess-needs" type="radio" value="No">
+                            <input class="govuk-radios__input" id="acccess-needs-2" name="acccess-needs" type="radio" value="No" {{ checked('acccess-needs','No') }}>
                             <label class="govuk-label govuk-radios__label" for="acccess-needs-2">
                                 No
                             </label>
@@ -236,12 +237,6 @@
                 </fieldset>
                 
             </div>
-                
-                
-                
-                
-                
-                
                 
             <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
                 Continue

@@ -7,8 +7,47 @@
 
 {% block content %}
 
+<script>
+    window.onload = function() {
+        
+        /* **************** */
+        /* **************** */
+        /* **************** */
+        /* MITIGATION CHECK */
+        var offence_1_plea = document.getElementById('offence-1-plea').innerHTML;
+        var offence_2_plea = document.getElementById('offence-2-plea').innerHTML;
+        var offence_3_plea = document.getElementById('offence-3-plea').innerHTML;
+        
+        if (offence_1_plea == "Not guilty") {
+            document.getElementById('offence-1-mitigation-guilty').style.display = "none";
+            document.getElementById('offence-1-mitigation-not-guilty').style.display = "inline";
+        } else if (offence_1_plea == "Guilty") {
+            document.getElementById('offence-1-mitigation-guilty').style.display = "inline";
+            document.getElementById('offence-1-mitigation-not-guilty').style.display = "none";
+        }
+
+        if (offence_2_plea == "Not guilty") {
+            document.getElementById('offence-2-mitigation-guilty').style.display = "none";
+            document.getElementById('offence-2-mitigation-not-guilty').style.display = "inline";
+        } else if (offence_2_plea == "Guilty") {
+            document.getElementById('offence-2-mitigation-guilty').style.display = "inline";
+            document.getElementById('offence-2-mitigation-not-guilty').style.display = "none";
+        }
+
+        if (offence_3_plea == "Not guilty") {
+            document.getElementById('offence-3-mitigation-guilty').style.display = "none";
+            document.getElementById('offence-3-mitigation-not-guilty').style.display = "inline";
+        } else if (offence_3_plea_plea == "Guilty") {
+            document.getElementById('offence-3-mitigation-guilty').style.display = "inline";
+            document.getElementById('offence-3-mitigation-not-guilty').style.display = "none";
+        }
+        
+    }
+</script>
+
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -16,13 +55,489 @@
 
         <h1 class="govuk-heading-xl">
             Check your answers
-        </h1>  
+        </h1>
+        
+        <!-- ------------ -->
+        <!-- ------------ -->
+        <!-- ------------ -->
+        <!-- YOUR DETAILS -->
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m">Your details</h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body" style="text-align: right">
+                    <a href="/map/your_details">
+                        Change
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <!-- DEFENDANT NAME -->
+        <div id="cya-name">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Name
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['defendant-first-name']}} <span style="text-transform: uppercase">{{data['defendant-last-name']}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+        
+        <!-- DEFENDANT ADDRESS -->
+        <div id="cya-address">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Address
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['defendant-address-line-1']}}<br>
+                        {{data['defendant-address-line-2']}}<br>
+                        {{data['defendant-address-line-3']}}<br>
+                        {{data['defendant-address-line-4']}}<br>
+                        {{data['defendant-address-line-5']}}<br>
+                        {{data['defendant-address-postcode']}}<br>
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+        
+        <!-- ------------ -->
+        <!-- ------------ -->
+        <!-- ------------ -->
+        <!-- OTHER DETAILS -->
+        <div class="govuk-grid-row margin-top-60">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m">Other details</h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body" style="text-align: right">
+                    <a href="/map/your_details">
+                        Change
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <!-- DEFENDANT DOB -->
+        <div id="cya-dob">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Date of birth
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['dob-day']}} {{data['dob-month']}} {{data['dob-year']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+        
+        <!-- EMAIL ADDRESS -->
+        <div id="cya-email-address">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Email address
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['email-address']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+        
+        <!-- CONTACT NUMBER -->
+        <div id="cya-contact-number">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Contact number
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['contact-number']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+        
+        <!-- ---------------------- -->
+        <!-- ---------------------- -->
+        <!-- ---------------------- -->
+        <!-- DRIVING LICENSE NUMBER -->
+        <div class="govuk-grid-row margin-top-60">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m">Driving license number</h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body" style="text-align: right">
+                    <a href="/map/your_details">
+                        Change
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <!-- DO YOU HAVE A UK DRIVING LICENSE? -->
+        <div id="cya-dob">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Do you have a UK driving license?
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['do-you-have-a-dl']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- YOUR UK DRIVING LICENSE NUMBER -->
+        <div id="cya-dob">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Your UK driving license number
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['dl-number']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- IF NO UK LICENSE WHAT TYPE IS IT? -->
+        <div id="cya-dob">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Tell us what kind of drivers license you hold
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['license-type']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- OFFENCE 1 -->
+        <div class="govuk-grid-row margin-top-60">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m margin-bottom-5">Offence 1 of 3</h2>
+                <h3 class="govuk-heading-s">{{data['offence-1-title']}}</h3>
+            </div>
+        </div>
+        
+        <!-- Your plea -->
+        <div class="govuk-grid-row ">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m margin-bottom-5">Your plea</h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body" style="text-align: right">
+                    <a href="/map/your_details">
+                        Change
+                    </a>
+                </p>
+            </div>
+        </div>
+                
+        <!-- HOW DO YOU PLEAD? -->
+        <div id="cya-offence-1-plea">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        How do you plead?
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['offence-1-plea']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- WOULD YOU LIKE TO COME TO COURT? -->
+        <div id="cya-offence-1-come-to-court">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Would you like to come to court?
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['guilty-come-to-court']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- WOULD YOU LIKE TO COME TO COURT? -->
+        <div id="cya-offence-1-mitigation">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        <span id="offence-1-mitigation-guilty">Guilty plea mitigation</span> <span id="offence-1-mitigation-not-guilty">Why you think your not guilty</span>
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['offence-1-mitigation']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- OFFENCE 2 -->
+        <div class="govuk-grid-row margin-top-60">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m margin-bottom-5">Offence 2 of 3</h2>
+                <h3 class="govuk-heading-s">{{data['offence-2-title']}}</h3>
+            </div>
+        </div>
+        
+        <!-- Your plea -->
+        <div class="govuk-grid-row ">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m margin-bottom-5">Your plea</h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body" style="text-align: right">
+                    <a href="/map/your_details">
+                        Change
+                    </a>
+                </p>
+            </div>
+        </div>
+                
+        <!-- HOW DO YOU PLEAD? -->
+        <div id="cya-offence-2-plea">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        How do you plead?
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['offence-2-plea']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- WOULD YOU LIKE TO COME TO COURT? -->
+        <div id="cya-offence-2-come-to-court">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Would you like to come to court?
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['guilty-come-to-court']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- WOULD YOU LIKE TO COME TO COURT? -->
+        <div id="cya-offence-2-mitigation">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        <span id="offence-2-mitigation-guilty">Guilty plea mitigation</span> <span id="offence-2-mitigation-not-guilty">Why you think your not guilty</span>
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['offence-2-mitigation']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- OFFENCE 3 -->
+        <div class="govuk-grid-row margin-top-60">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m margin-bottom-5">Offence 3 of 3</h2>
+                <h3 class="govuk-heading-s">{{data['offence-3-title']}}</h3>
+            </div>
+        </div>
+        
+        <!-- Your plea -->
+        <div class="govuk-grid-row ">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m margin-bottom-5">Your plea</h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body" style="text-align: right">
+                    <a href="/map/your_details">
+                        Change
+                    </a>
+                </p>
+            </div>
+        </div>
+                
+        <!-- HOW DO YOU PLEAD? -->
+        <div id="cya-offence-3-plea">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        How do you plead?
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['offence-3-plea']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- WOULD YOU LIKE TO COME TO COURT? -->
+        <div id="cya-offence-3-come-to-court">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        Would you like to come to court?
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['guilty-come-to-court']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+        <!-- WOULD YOU LIKE TO COME TO COURT? -->
+        <div id="cya-offence-3-mitigation">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body margin-bottom-0">
+                        <span id="offence-3-mitigation-guilty">Guilty plea mitigation</span> <span id="offence-3-mitigation-not-guilty">Why you think your not guilty</span>
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="margin-bottom-0">
+                        {{data['offence-3-mitigation']}} 
+                    </p>
+                </div>
+            </div>
+            <div class="margin-top-10 margin-bottom-15">
+                <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+        </div>
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         <form action="" method="post">
             <div class="govuk-form-group">
 
                 <button type="submit" class="govuk-button margin-top-30 margin-bottom-15">
-                    Continue
+                    Confirm and continue
                 </button>
                 <p class="govuk-body">
                     <a class="govuk-link" href="javascript:history.back()">Back</a>

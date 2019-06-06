@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -37,21 +38,19 @@
                 <details class="govuk-details margin-bottom-15">
                     <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text govuk-!-font-weight-bold">
-                            Driving without insurance
+                            {{data['offence-1-title']}}
                         </span>
                     </summary>
                     <div class="govuk-details__text">
-                        <p class="govuk-body">On 07/03/2019 at Manchester used a motor vehicle, namely a Audi A4 VRM N15 REP, on a road, or other public place, namely Lordship Lane, Lower Broughton, when there was not in force in relation to that use such a policy of insurance or such a security in respect of third party risks as complied with the requirements of Part VI of the Road Traffic Act 1988.</p>
-
-                        <p class="govuk-body">Contrary to section 143 of the Road Traffic Act 1988</p>
-
-                        <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                            <p class="govuk-body">{{data['offence-1-wording-1']}}</p>
+                            <p class="govuk-body">{{data['offence-1-wording-2']}}</p>
+                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-1-wording-3']}}</p>
                     </div>
                 </details>
 
                 <div class="govuk-character-count margin-bottom-0" data-module="character-count" data-maxlength="200">
                     <div class="govuk-form-group">
-                        <textarea class="govuk-textarea js-character-count " id="offence-1-mitigation" name="offence-1-mitigation" rows="5" aria-describedby="offence-1-mitigation-hint-hint"></textarea>
+                        <textarea class="govuk-textarea js-character-count " id="offence-1-mitigation" name="offence-1-mitigation" rows="5" aria-describedby="offence-1-mitigation">{{ data['offence-1-mitigation'] }}</textarea>
                     </div>
 
                     <span id="offence-1-mitigation-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
@@ -73,24 +72,22 @@
                 <details class="govuk-details margin-bottom-15">
                     <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text govuk-!-font-weight-bold">
-                            Driving without insurance
+                            {{data['offence-2-title']}}
                         </span>
                     </summary>
                     <div class="govuk-details__text">
-                        <p class="govuk-body">On 07/03/2019 at Manchester used a motor vehicle, namely a Audi A4 VRM N15 REP, on a road, or other public place, namely Lordship Lane, Lower Broughton, when there was not in force in relation to that use such a policy of insurance or such a security in respect of third party risks as complied with the requirements of Part VI of the Road Traffic Act 1988.</p>
-
-                        <p class="govuk-body">Contrary to section 143 of the Road Traffic Act 1988</p>
-
-                        <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                            <p class="govuk-body">{{data['offence-2-wording-1']}}</p>
+                            <p class="govuk-body">{{data['offence-2-wording-2']}}</p>
+                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-2-wording-3']}}</p>
                     </div>
                 </details>
 
                 <div class="govuk-character-count margin-bottom-0" data-module="character-count" data-maxlength="200">
                     <div class="govuk-form-group">
-                        <textarea class="govuk-textarea js-character-count " id="offence-2-mitigation-hint" name="offence-2-mitigation-hint" rows="5" aria-describedby="offence-2-mitigation-hint-hint"></textarea>
+                        <textarea class="govuk-textarea js-character-count " id="offence-2-mitigation" name="offence-2-mitigation" rows="5" aria-describedby="offence-2-mitigation">{{ data['offence-2-mitigation'] }}</textarea>
                     </div>
 
-                    <span id="offence-2-mitigation-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                    <span id="offence-2-mitigation-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                         You can enter up to 200 characters
                     </span>
                 </div>
@@ -109,24 +106,23 @@
                 <details class="govuk-details margin-bottom-15">
                     <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text govuk-!-font-weight-bold">
-                            Driving without insurance
+                            {{data['offence-3-title']}}
                         </span>
                     </summary>
                     <div class="govuk-details__text">
-                        <p class="govuk-body">On 07/03/2019 at Manchester used a motor vehicle, namely a Audi A4 VRM N15 REP, on a road, or other public place, namely Lordship Lane, Lower Broughton, when there was not in force in relation to that use such a policy of insurance or such a security in respect of third party risks as complied with the requirements of Part VI of the Road Traffic Act 1988.</p>
-
-                        <p class="govuk-body">Contrary to section 143 of the Road Traffic Act 1988</p>
-
-                        <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                            <p class="govuk-body">{{data['offence-3-wording-1']}}</p>
+                            <p class="govuk-body">{{data['offence-3-wording-2']}}</p>
+                            <p class="govuk-body">{{data['offence-3-wording-4']}}</p>
+                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-3-wording-4']}}</p>
                     </div>
                 </details>
 
                 <div class="govuk-character-count margin-bottom-0" data-module="character-count" data-maxlength="200">
                     <div class="govuk-form-group">
-                        <textarea class="govuk-textarea js-character-count " id="offence-3-mitigation-hint" name="offence-3-mitigation-hint" rows="5" aria-describedby="offence-3-mitigation-hint-hint"></textarea>
+                        <textarea class="govuk-textarea js-character-count " id="offence-3-mitigation" name="offence-3-mitigation" rows="5" aria-describedby="offence-3-mitigation-hint">{{ data['offence-3-mitigation'] }}</textarea>
                     </div>
 
-                    <span id="offence-3-mitigation-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                    <span id="offence-3-mitigation-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                         You can enter up to 200 characters
                     </span>
                 </div>

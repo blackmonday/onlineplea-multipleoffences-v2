@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -37,15 +38,13 @@
                 <details class="govuk-details">
                     <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text govuk-!-font-weight-bold">
-                            Driving without insurance
+                            {{data['offence-1-title']}}
                         </span>
                     </summary>
                     <div class="govuk-details__text">
-                        <p class="govuk-body">On 07/03/2019 at Manchester used a motor vehicle, namely a Audi A4 VRM N15 REP, on a road, or other public place, namely Lordship Lane, Lower Broughton, when there was not in force in relation to that use such a policy of insurance or such a security in respect of third party risks as complied with the requirements of Part VI of the Road Traffic Act 1988.</p>
-
-                        <p class="govuk-body">Contrary to section 143 of the Road Traffic Act 1988</p>
-
-                        <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                            <p class="govuk-body">{{data['offence-1-wording-1']}}</p>
+                            <p class="govuk-body">{{data['offence-1-wording-2']}}</p>
+                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-1-wording-3']}}</p>
                     </div>
                 </details>
 
@@ -58,15 +57,13 @@
                 <details class="govuk-details">
                     <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text govuk-!-font-weight-bold">
-                            Driving without insurance
+                            {{data['offence-2-title']}}
                         </span>
                     </summary>
                     <div class="govuk-details__text">
-                        <p class="govuk-body">On 07/03/2019 at Manchester used a motor vehicle, namely a Audi A4 VRM N15 REP, on a road, or other public place, namely Lordship Lane, Lower Broughton, when there was not in force in relation to that use such a policy of insurance or such a security in respect of third party risks as complied with the requirements of Part VI of the Road Traffic Act 1988.</p>
-
-                        <p class="govuk-body">Contrary to section 143 of the Road Traffic Act 1988</p>
-
-                        <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                            <p class="govuk-body">{{data['offence-2-wording-1']}}</p>
+                            <p class="govuk-body">{{data['offence-2-wording-2']}}</p>
+                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-2-wording-3']}}</p>
                     </div>
                 </details>
 
@@ -79,15 +76,14 @@
                 <details class="govuk-details">
                     <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text govuk-!-font-weight-bold">
-                            Driving without insurance
+                            {{data['offence-3-title']}}
                         </span>
                     </summary>
                     <div class="govuk-details__text">
-                        <p class="govuk-body">On 07/03/2019 at Manchester used a motor vehicle, namely a Audi A4 VRM N15 REP, on a road, or other public place, namely Lordship Lane, Lower Broughton, when there was not in force in relation to that use such a policy of insurance or such a security in respect of third party risks as complied with the requirements of Part VI of the Road Traffic Act 1988.</p>
-
-                        <p class="govuk-body">Contrary to section 143 of the Road Traffic Act 1988</p>
-
-                        <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                            <p class="govuk-body">{{data['offence-3-wording-1']}}</p>
+                            <p class="govuk-body">{{data['offence-3-wording-2']}}</p>
+                            <p class="govuk-body">{{data['offence-3-wording-4']}}</p>
+                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-3-wording-4']}}</p>
                     </div>
                 </details>
 

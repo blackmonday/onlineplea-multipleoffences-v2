@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -28,7 +29,7 @@
 
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="deduct-from-benefits-conditional-1" name="deduct-from-benefits" type="radio" value="Yes" data-aria-controls="conditional-deduct-from-benefits-conditional-1">
+                            <input class="govuk-radios__input" id="deduct-from-benefits-conditional-1" name="deduct-from-benefits" type="radio" value="Yes" data-aria-controls="conditional-deduct-from-benefits-conditional-1" {{ checked('deduct-from-benefits','Yes') }}>
                             <label class="govuk-label govuk-radios__label" for="deduct-from-benefits-conditional-1">
                                 Yes
                             </label>
@@ -59,7 +60,7 @@
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="deduct-from-benefits-conditional-2" name="deduct-from-benefits" type="radio" value="No" data-aria-controls="conditional-deduct-from-benefits-conditional-2">
+                            <input class="govuk-radios__input" id="deduct-from-benefits-conditional-2" name="deduct-from-benefits" type="radio" value="No" data-aria-controls="conditional-deduct-from-benefits-conditional-2" {{ checked('deduct-from-benefits','No') }}>
                             <label class="govuk-label govuk-radios__label" for="deduct-from-benefits-conditional-2">
                                 No
                             </label>

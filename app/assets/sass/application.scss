@@ -56,3 +56,27 @@ $govuk-global-styles: true;
     border-top: 10px solid $govuk-brand-colour;
     padding-top: 10px;
 }
+
+/* *********************** */
+/* *********************** */
+/* *********************** */
+/* ADDING £ TO FORM INPUTS */
+.input-icon {
+    position: relative;
+}
+
+.input-icon > i {
+    position: absolute;
+    display: block;
+    transform: translate(0, -50%);
+    top: 54%;
+    pointer-events: none;
+    width: 30px;
+    text-align: center;
+    font-style: normal;
+}
+
+.input-icon > input {
+    padding-left: 25px;
+    padding-right: 0;
+}

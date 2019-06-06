@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -24,56 +25,65 @@
             <h2 class="govuk-heading-m">What are your monthly bills for the following?</h2>
             
             <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="event-name">
+                <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="accomodation">
                     Accommodation
                 </label>
-                <span id="changed-name-hint" class="govuk-hint">
+                <span id="accomodation-hint" class="govuk-hint">
                     For example, rent, mortgage or lodgings
                 </span>
-                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+                <div class="input-icon">
+                    <i class="govuk-body">£</i>
+                    <input class="govuk-input govuk-!-width-one-third" id="accomodation" name="accomodation" type="number" min="0.00" step="0.01" max="1000000" aria-describedby="accomodation-hint" value="{{ data['accomodation'] }}">
+                </div>
             </div>            
             
             <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                <label class="govuk-label govuk-!-font-weight-bold" for="council-tax">
                     Council tax
                 </label>
-                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+                <div class="input-icon">
+                    <i class="govuk-body">£</i>
+                    <input class="govuk-input govuk-!-width-one-third" id="council-tax" name="council-tax" type="number" min="0.00" step="0.01" max="1000000" aria-describedby="council-tax-hint" value="{{ data['council-tax'] }}">
+                </div>
             </div>            
             
             <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="event-name">
+                <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="household-bills">
                     Household bills
                 </label>
-                <span id="changed-name-hint" class="govuk-hint">
+                <span id="household-bills-hint" class="govuk-hint">
                     For example, gas, electricity, water, insurance
                 </span>
-                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+                <div class="input-icon">
+                    <i class="govuk-body">£</i>
+                    <input class="govuk-input govuk-!-width-one-third" id="household-bills" name="household-bills" type="number" min="0.00" step="0.01" max="1000000" aria-describedby="household-bills-hint" value="{{ data['household-bills'] }}">
+                </div>
             </div>            
             
             <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="event-name">
+                <label class="govuk-label govuk-!-font-weight-bold margin-bottom-0" for="travel-expenses">
                     Travel expenses
                 </label>
-                <span id="changed-name-hint" class="govuk-hint">
+                <span id="travel-expenses-hint" class="govuk-hint">
                     For example, fuel, car, public transport
                 </span>
-                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+                <div class="input-icon">
+                    <i class="govuk-body">£</i>
+                    <input class="govuk-input govuk-!-width-one-third" id="travel-expenses" name="travel-expenses" type="number" min="0.00" step="0.01" max="1000000" aria-describedby="travel-expenses-hint" value="{{ data['travel-expenses'] }}">
+                </div>
             </div>            
             
             <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                <label class="govuk-label govuk-!-font-weight-bold" for="child-maintenance">
                     Child maintenance
                 </label>
-                <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+                <div class="input-icon">
+                    <i class="govuk-body">£</i>
+                    <input class="govuk-input govuk-!-width-one-third" id="child-maintenance" name="child-maintenance" type="number" min="0.00" step="0.01" max="1000000" aria-describedby="child-maintenance-hint" value="{{ data['child-maintenance'] }}">
+                </div>
             </div>            
             
-            
-            
-            
-            
-            
-    
-            <fieldset class="govuk-fieldset margin-top-30" aria-describedby="how-contacted-conditional-hint">
+            <fieldset class="govuk-fieldset margin-top-30" aria-describedby="any-other-expenses-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                     <h1 class="govuk-fieldset__heading">
                         Any other expenses?
@@ -82,39 +92,42 @@
 
                 <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="Yes" data-aria-controls="conditional-how-contacted-conditional-1">
-                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                        <input class="govuk-radios__input" id="any-other-expenses-1" name="any-other-expenses" type="radio" value="Yes" data-aria-controls="conditional-any-other-expenses-1" {{ checked('any-other-expenses','Yes') }}>
+                        <label class="govuk-label govuk-radios__label" for="any-other-expenses-1">
                             Yes
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-any-other-expenses-1">
                         
                         <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-!-font-weight-bold" for="with-hint">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="list-of-other-expenses">
                                     List any other monthly outgoings you believe the court should know about
                                 </label>
-                                <span id="with-hint-hint" class="govuk-hint">
+                                <span id="list-of-other-expenses-hint" class="govuk-hint">
                                     For example, other court orders, Netflix, TV license
                                 </span>
-                                <textarea class="govuk-textarea js-character-count " id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-hint"></textarea>
+                                <textarea class="govuk-textarea js-character-count " id="list-of-other-expenses" name="list-of-other-expenses" rows="5" aria-describedby="list-of-other-expenses-hint"></textarea>
                             </div>
 
-                            <span id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                            <span id="list-of-othe-expenses-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                                 You can enter up to 200 characters
                             </span>
                         </div>                        
                         
                         <div class="govuk-form-group">
-                            <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="amount-of-other-expenses">
                                 Amount of other expenses
                             </label>
-                            <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text">
+                            <div class="input-icon">
+                                <i class="govuk-body">£</i>
+                                <input class="govuk-input govuk-!-width-one-third" id="amount-of-other-expenses" name="amount-of-other-expenses" type="number" min="0.00" step="0.01" max="1000000" aria-describedby="amount-of-other-expenses-hint" value="{{ data['amount-of-other-expenses'] }}">
+                            </div>
                         </div>            
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="No">
-                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                        <input class="govuk-radios__input" id="any-other-expenses-2" name="any-other-expenses" type="radio" value="No" {{ checked('any-other-expenses','No') }}>
+                        <label class="govuk-label govuk-radios__label" for="any-other-expenses-2">
                             No
                         </label>
                     </div>

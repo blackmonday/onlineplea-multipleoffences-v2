@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -32,13 +33,13 @@
                 </span>
                 <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="are-you-claiming-benefits-1" name="are-you-claiming-benefits" type="radio" value="Yes">
+                        <input class="govuk-radios__input" id="are-you-claiming-benefits-1" name="are-you-claiming-benefits" type="radio" value="Yes" {{ checked('are-you-claiming-benefits','Yes') }}>
                         <label class="govuk-label govuk-radios__label" for="are-you-claiming-benefits-1">
                         Yes
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="are-you-claiming-benefits-2" name="are-you-claiming-benefits" type="radio" value="No">
+                        <input class="govuk-radios__input" id="are-you-claiming-benefits-2" name="are-you-claiming-benefits" type="radio" value="No" {{ checked('are-you-claiming-benefits','No') }}>
                         <label class="govuk-label govuk-radios__label" for="are-you-claiming-benefits-2">
                             No
                         </label>

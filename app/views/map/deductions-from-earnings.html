@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -33,13 +34,13 @@
             <fieldset class="govuk-fieldset" aria-describedby="deduct-from-earnings-hint">
                 <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="deduct-from-earnings-1" name="deduct-from-earnings" type="radio" value="Yes">
+                        <input class="govuk-radios__input" id="deduct-from-earnings-1" name="deduct-from-earnings" type="radio" value="Yes" {{ checked('deduct-from-earnings','Yes') }}>
                         <label class="govuk-label govuk-radios__label" for="deduct-from-earnings-1">
                             Yes
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="deduct-from-earnings-2" name="deduct-from-earnings" type="radio" value="No">
+                        <input class="govuk-radios__input" id="deduct-from-earnings-2" name="deduct-from-earnings" type="radio" value="No" {{ checked('deduct-from-earnings','No') }}>
                         <label class="govuk-label govuk-radios__label" for="deduct-from-earnings-2">
                             No
                         </label>

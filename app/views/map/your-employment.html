@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -33,7 +34,7 @@
                 <span id="how-contacted-conditional-hint" class="govuk-hint">
                     This is the company name of your employer - this should be on your payslip
                 </span>
-                <input class="govuk-input" id="name-of-employer" name="name-of-employer" type="text">
+                <input class="govuk-input" id="name-of-employer" name="name-of-employer" type="text" value="{{ data['name-of-employer'] }}">
             </fieldset>
         </div>        
         
@@ -48,7 +49,7 @@
                 <span id="how-contacted-conditional-hint" class="govuk-hint">
                     Also known as employee number or payroll reference - this should be on your payslip
                 </span>
-                <input class="govuk-input" id="employee-number" name="employee-number" type="text">
+                <input class="govuk-input" id="employee-number" name="employee-number" type="text" value="{{ data['employee-number'] }}">
             </fieldset>
         </div>        
         
@@ -72,32 +73,32 @@
                     </div>
                 </details>                
                 
-                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                <label class="govuk-label govuk-!-font-weight-bold" for="employer-address-line-1">
                     Address
                 </label>
-                <input class="govuk-input margin-bottom-10" id="employer-address-line-1" name="employer-address-line-1" type="text">
-                <input class="govuk-input margin-bottom-10" id="employer-address-line-2" name="employer-address-line-2" type="text">
-                <input class="govuk-input margin-bottom-15" id="employer-address-line-3" name="employer-address-line-3" type="text">
+                <input class="govuk-input margin-bottom-10" id="employer-address-line-1" name="employer-address-line-1" type="text" value="{{ data['employer-address-line-1'] }}">
+                <input class="govuk-input margin-bottom-10" id="employer-address-line-2" name="employer-address-line-2" type="text" value="{{ data['employer-address-line-2'] }}">
+                <input class="govuk-input margin-bottom-15" id="employer-address-line-3" name="employer-address-line-3" type="text" value="{{ data['employer-address-line-3'] }}">
                 
-                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                <label class="govuk-label govuk-!-font-weight-bold" for="employer-address-line-4">
                     Town or city
                 </label>
-                <input class="govuk-input margin-bottom-15" id="employee-number" name="employer-address-town-or-city" type="text">
+                <input class="govuk-input margin-bottom-15" id="employer-address-line-4" name="employer-address-line-4" type="text" value="{{ data['employer-address-line-4'] }}">
                 
-                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                <label class="govuk-label govuk-!-font-weight-bold" for="employer-address-line-5">
                     County (optional)
                 </label>
-                <input class="govuk-input margin-bottom-15" id="employee-number" name="employer-address-county" type="text">
+                <input class="govuk-input margin-bottom-15" id="employer-address-line-5" name="employer-address-line-5" type="text" value="{{ data['employer-address-line-5'] }}">
                 
                 <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
                     Postcode
                 </label>
-                <input class="govuk-input margin-bottom-30" id="employee-number" name="employer-address-postcode" type="text">
+                <input class="govuk-input margin-bottom-30" id="employee-number" name="employer-address-postcode" type="text" value="{{ data['employer-address-postcode'] }}">
                 
-                <label class="govuk-label govuk-!-font-weight-bold" for="event-name">
+                <label class="govuk-label govuk-!-font-weight-bold" for="employers-telephone">
                     Telephone (optional)
                 </label>
-                <input class="govuk-input" id="employee-number" name="employers-telephone" type="text">
+                <input class="govuk-input" id="employers-telephone" name="employers-telephone" type="number" value="{{ data['employers-telephone'] }}">
             </fieldset>
         </div>        
         

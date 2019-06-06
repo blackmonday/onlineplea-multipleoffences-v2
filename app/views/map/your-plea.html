@@ -9,6 +9,7 @@
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
+{% include "includes/data-check.html" %}
 
 <div class="govuk-grid-row">
 
@@ -47,15 +48,13 @@
                     <details class="govuk-details" open>
                         <summary class="govuk-details__summary">
                             <span class="govuk-details__summary-text">
-                                Driving without insurance
+                                {{data['offence-1-title']}}
                             </span>
                         </summary>
                         <div class="govuk-details__text">
-                            <p class="govuk-body">On 07/03/2019 at Manchester used a motor vehicle, namely a Audi A4 VRM N15 REP, on a road, or other public place, namely Lordship Lane, Lower Broughton, when there was not in force in relation to that use such a policy of insurance or such a security in respect of third party risks as complied with the requirements of Part VI of the Road Traffic Act 1988.</p>
-
-                            <p class="govuk-body">Contrary to section 143 of the Road Traffic Act 1988</p>
-
-                            <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                            <p class="govuk-body">{{data['offence-1-wording-1']}}</p>
+                            <p class="govuk-body">{{data['offence-1-wording-2']}}</p>
+                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-1-wording-3']}}</p>
                         </div>
                     </details>
 
@@ -65,12 +64,12 @@
 
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="offence-1-conditional-1" name="offence-1" type="radio" value="Guilty" data-aria-controls="conditional-offence-1-conditional-1" {{ checked('offence-1','Guilty') }}>
-                            <label class="govuk-label govuk-radios__label" for="offence-1-conditional-1">
+                            <input class="govuk-radios__input" id="offence-1-conditional-1" name="offence-1-plea" type="radio" value="Guilty" data-aria-controls="conditional-offence-1-plea-conditional-1" {{ checked('offence-1-plea','Guilty') }}>
+                            <label class="govuk-label govuk-radios__label" for="offence-1-plea-conditional-1">
                                 Guilty
                             </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-1-conditional-1">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-1-plea-conditional-1">
                             <div class="govuk-form-group">
                                 <p class="govuk-body">
                                     You’re declaring you committed the offence. You will have the opportunity to give additional information to the court.
@@ -78,12 +77,12 @@
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="offence-1-conditional-2" name="offence-1" type="radio" value="Not guilty" data-aria-controls="conditional-offence-1-conditional-2" {{ checked('offence-1','Not guilty') }}>
-                            <label class="govuk-label govuk-radios__label" for="offence-1-conditional-2">
+                            <input class="govuk-radios__input" id="offence-1-plea-conditional-2" name="offence-1-plea" type="radio" value="Not guilty" data-aria-controls="conditional-offence-1-plea-conditional-2" {{ checked('offence-1-plea','Not guilty') }}>
+                            <label class="govuk-label govuk-radios__label" for="offence-1-plea-conditional-2">
                                 Not guilty
                             </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-1-conditional-2">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-1-plea-conditional-2">
                             <div class="govuk-form-group">
                                 <p class="govuk-body">
                                     You're declaring you didn't commit the offence so you'll need to attend court if you want to present your evidence.
@@ -106,15 +105,13 @@
                     <details class="govuk-details" open>
                         <summary class="govuk-details__summary">
                             <span class="govuk-details__summary-text">
-                                Driving otherwise than in accordance with a driving licence
+                                {{data['offence-2-title']}}
                             </span>
                         </summary>
                         <div class="govuk-details__text">
-                            <p class="govuk-body">On 07/03/2019 at Manchester drove a motor vehicle, namely a Audi A4 VRM N15 REP on a road, namely Lordship Lane, Lower Broughton otherwise than in accordance with a licence authorising you to drive a motor vehicle of that class.</p>
-
-                            <p class="govuk-body">Contrary to section 87(1) of the Road Traffic Act 1988</p>
-
-                            <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                            <p class="govuk-body">{{data['offence-2-wording-1']}}</p>
+                            <p class="govuk-body">{{data['offence-2-wording-2']}}</p>
+                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-2-wording-3']}}</p>
                         </div>
                     </details>
 
@@ -124,12 +121,12 @@
 
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="offence-2-conditional-1" name="offence-2" type="radio" value="Guilty" data-aria-controls="conditional-offence-2-conditional-1" {{ checked('offence-2','Guilty') }}>
-                            <label class="govuk-label govuk-radios__label" for="offence-2-conditional-1">
+                            <input class="govuk-radios__input" id="offence-2-plea-conditional-1" name="offence-2-plea" type="radio" value="Guilty" data-aria-controls="conditional-offence-2-plea-conditional-1" {{ checked('offence-2-plea','Guilty') }}>
+                            <label class="govuk-label govuk-radios__label" for="offence-2-plea-conditional-1">
                                 Guilty
                             </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-2-conditional-1">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-2-plea-conditional-1">
                             <div class="govuk-form-group">
                                 <p class="govuk-body">
                                     You’re declaring you committed the offence. You will have the opportunity to give additional information to the court.
@@ -137,12 +134,12 @@
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="offence-2-conditional-2" name="offence-2" type="radio" value="Not guilty" data-aria-controls="conditional-offence-2-conditional-2" {{ checked('offence-2','Not guilty') }}>
-                            <label class="govuk-label govuk-radios__label" for="offence-2-conditional-2">
+                            <input class="govuk-radios__input" id="offence-2-plea-conditional-2" name="offence-2-plea" type="radio" value="Not guilty" data-aria-controls="conditional-offence-2-plea-conditional-2" {{ checked('offence-2-plea','Not guilty') }}>
+                            <label class="govuk-label govuk-radios__label" for="offence-2-plea-conditional-2">
                                 Not guilty
                             </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-2-conditional-2">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-2-plea-conditional-2">
                             <div class="govuk-form-group">
                                 <p class="govuk-body">
                                     You're declaring you didn't commit the offence so you'll need to attend court if you want to present your evidence.
@@ -165,17 +162,14 @@
                     <details class="govuk-details" open>
                         <summary class="govuk-details__summary">
                             <span class="govuk-details__summary-text">
-                                Speeding - exceed 30 miles per hour on restricted road - manned camera device
+                                {{data['offence-2-title']}}
                             </span>
                         </summary>
                         <div class="govuk-details__text">
-                            <p class="govuk-body">Speeding - exceed 30 miles per hour on restricted road - automatic camera device 07/03/2019 -- On 07/03/2019 12:03hrs, at BEESTON a Audi A4 VRM N15 REP on a namely Lordship Lane, Lower Broughton at a speed exceeding 30 miles per hour.</p>
-
-                            <p class="govuk-body">**SPEED RECORDED 37MPH** </p>
-
-                            <p class="govuk-body">Contrary to section 14, 15(2) and 15(4) of the Road Traffic Regulation Act 1984 </p>
-
-                            <p class="govuk-body govuk-!-font-weight-bold">This offence carries penalty points</p>
+                            <p class="govuk-body">{{data['offence-3-wording-1']}}</p>
+                            <p class="govuk-body">{{data['offence-3-wording-2']}}</p>
+                            <p class="govuk-body">{{data['offence-3-wording-3']}}</p>
+                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-3-wording-4']}}</p>
                         </div>
                     </details>
 
@@ -185,12 +179,12 @@
 
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="offence-3-conditional-1" name="offence-3" type="radio" value="Guilty" data-aria-controls="conditional-offence-3-conditional-1" {{ checked('offence-3','Guilty') }}>
-                            <label class="govuk-label govuk-radios__label" for="offence-3-conditional-1">
+                            <input class="govuk-radios__input" id="offence-3-plea-conditional-1" name="offence-3-plea" type="radio" value="Guilty" data-aria-controls="conditional-offence-3-plea-conditional-1" {{ checked('offence-3','Guilty') }}>
+                            <label class="govuk-label govuk-radios__label" for="offence-3-plea-conditional-1">
                                 Guilty
                             </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-3-conditional-1">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-3-plea-conditional-1">
                             <div class="govuk-form-group">
                                 <p class="govuk-body">
                                     You’re declaring you committed the offence. You will have the opportunity to give additional information to the court.
@@ -198,12 +192,12 @@
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="offence-3-conditional-2" name="offence-3" type="radio" value="Not guilty" data-aria-controls="conditional-offence-3-conditional-2" {{ checked('offence-3','Not guilty') }}>
-                            <label class="govuk-label govuk-radios__label" for="offence-3-conditional-2">
+                            <input class="govuk-radios__input" id="offence-3-plea-conditional-2" name="offence-3-plea" type="radio" value="Not guilty" data-aria-controls="conditional-offence-3-plea-conditional-2" {{ checked('offence-3-plea','Not guilty') }}>
+                            <label class="govuk-label govuk-radios__label" for="offence-3-plea-conditional-2">
                                 Not guilty
                             </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-3-conditional-2">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-offence-3-plea-conditional-2">
                             <div class="govuk-form-group">
                                 <p class="govuk-body">
                                     You're declaring you didn't commit the offence so you'll need to attend court if you want to present your evidence.
