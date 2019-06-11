@@ -194,7 +194,7 @@
                 <h2 class="govuk-heading-m margin-top-60">Disabilities or access needs</h2>
 
                 <!-- DATES TO AVOID -->
-                <fieldset class="govuk-fieldset" aria-describedby="acccess-needs-hint">
+                <fieldset class="govuk-fieldset" aria-describedby="access-needs-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                         <h1 class="govuk-fieldset__heading">
                             Do you have a disability or access need you want the court to know about?
@@ -205,30 +205,30 @@
                     </span>
                     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="acccess-needs-1" name="acccess-needs" type="radio" value="Yes" data-aria-controls="conditional-acccess-needs-1" {{ checked('acccess-needs','Yes') }}>
-                            <label class="govuk-label govuk-radios__label" for="acccess-needs-1">
+                            <input class="govuk-radios__input" id="access-needs-1" name="access-needs" type="radio" value="Yes" data-aria-controls="conditional-access-needs-1" {{ checked('access-needs','Yes') }}>
+                            <label class="govuk-label govuk-radios__label" for="access-needs-1">
                                 Yes
                             </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-acccess-needs-1">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-access-needs-1">
 
                             <div class="govuk-character-count" data-module="character-count" data-maxlength="200">
                                 <div class="govuk-form-group">
-                                    <label class="govuk-label" for="which-acccess-needs">
+                                    <label class="govuk-label" for="which-access-needs">
                                         Tell the court about your disability or access needs
                                     </label>
-                                    <textarea class="govuk-textarea js-character-count " id="which-acccess-needs" name="which-acccess-needs" rows="5" aria-describedby="which-acccess-needs-hint">{{data['which-acccess-needs']}}</textarea>
+                                    <textarea class="govuk-textarea js-character-count " id="which-access-needs" name="which-access-needs" rows="5" aria-describedby="which-access-needs-hint">{{data['which-access-needs']}}</textarea>
                                 </div>
 
-                                <span id="which-acccess-needs-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                                <span id="which-access-needs-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                                     You can enter up to 200 characters
                                 </span>
                             </div>
 
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="acccess-needs-2" name="acccess-needs" type="radio" value="No" {{ checked('acccess-needs','No') }}>
-                            <label class="govuk-label govuk-radios__label" for="acccess-needs-2">
+                            <input class="govuk-radios__input" id="acccess-needs-2" name="access-needs" type="radio" value="No" {{ checked('access-needs','No') }}>
+                            <label class="govuk-label govuk-radios__label" for="access-needs-2">
                                 No
                             </label>
                         </div>

@@ -44,7 +44,7 @@
 
 </style>
 
-<div class="data-check margin-bottom-30">
+<div class="data-check margin-bottom-30" style="display:none">
     
     <p class="govuk-!-font-weight-bold margin-bottom-5">Data check</p>
     <p class="margin-bottom-0">&nbsp;</p>
@@ -95,6 +95,12 @@
             <p class="margin-bottom-0">Plea for offence 3</p>
             <p class="margin-bottom-0">&nbsp;</p>
             
+            
+            <p class="margin-bottom-0 govuk-!-font-weight-bold data-check-no-top-border">Evidence in this notice</p>
+            <p class="margin-bottom-0">Do you disagree with any of the statements in the notice sent to you?</p>
+            <p class="margin-bottom-0">Tell us what you don't agree with</p>
+            <p class="margin-bottom-0">&nbsp;</p>
+
             <p class="margin-bottom-0 govuk-!-font-weight-bold data-check-no-top-border">Guilty plea</p>
             <p class="margin-bottom-0">If guilty - come to court?</p>
             <p class="margin-bottom-0">&nbsp;</p>
@@ -222,6 +228,11 @@
             <p class="margin-bottom-0">&nbsp;</p>
 
             <p class="margin-bottom-0 data-check-no-top-border">&nbsp;</p>
+            <p class="margin-bottom-0"><span id="disagree">{{data['disagree']}}</span>&nbsp;</p>
+            <p class="margin-bottom-0"><span id="disagree-detail">{{data['disagree-detail']}}</span>&nbsp;</p>
+            <p class="margin-bottom-0">&nbsp;</p>
+
+            <p class="margin-bottom-0 data-check-no-top-border">&nbsp;</p>
             <p class="margin-bottom-0">{{data['guilty-come-to-court']}}&nbsp;</p>
             <p class="margin-bottom-0">&nbsp;</p>
 
@@ -239,8 +250,8 @@
             <p class="margin-bottom-0">{{data['do-you-need-an-interpreter']}}&nbsp;</p>
             <p class="margin-bottom-0">{{data['which-language']}}&nbsp;</p>
             <p class="margin-bottom-0">{{data['do-you-wish-to-speak-welsh']}}&nbsp;</p>
-            <p class="margin-bottom-0">{{data['acccess-needs']}}&nbsp;</p>
-            <p class="margin-bottom-0">{{data['which-acccess-needs']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['access-needs']}}&nbsp;</p>
+            <p class="margin-bottom-0">{{data['which-access-needs']}}&nbsp;</p>
             <p class="margin-bottom-0">&nbsp;</p>
             
             <p class="margin-bottom-0 data-check-no-top-border">&nbsp;</p>
