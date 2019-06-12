@@ -1,4 +1,5 @@
 
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -46,7 +47,6 @@
             document.getElementById('1-not-guilty-plea-mitigation-change').style.display = "none";
             document.getElementById('1-guilty-plea-mitigation-change').style.display = "inline";
         }
-
         if (offence_2_plea == "Not guilty") {
             document.getElementById('offence-2-mitigation-guilty').style.display = "none";
             document.getElementById('offence-2-mitigation-guilty-2').style.display = "none";
@@ -62,7 +62,6 @@
             document.getElementById('2-not-guilty-plea-mitigation-change').style.display = "none";
             document.getElementById('2-guilty-plea-mitigation-change').style.display = "inline";
         }
-
         if (offence_3_plea == "Not guilty") {
             document.getElementById('offence-3-mitigation-guilty').style.display = "none";
             document.getElementById('offence-3-mitigation-guilty-2').style.display = "none";
@@ -70,7 +69,7 @@
             document.getElementById('offence-3-mitigation-not-guilty-2').style.display = "inline";
             document.getElementById('3-not-guilty-plea-mitigation-change').style.display = "inline";
             document.getElementById('3-guilty-plea-mitigation-change').style.display = "none";
-        } else if (offence_3_plea_plea == "Guilty") {
+        } else if (offence_3_plea == "Guilty") {
             document.getElementById('offence-3-mitigation-guilty').style.display = "inline";
             document.getElementById('offence-3-mitigation-guilty-2').style.display = "inline";
             document.getElementById('offence-3-mitigation-not-guilty').style.display = "none";
@@ -78,17 +77,19 @@
             document.getElementById('3-not-guilty-plea-mitigation-change').style.display = "none";
             document.getElementById('3-guilty-plea-mitigation-change').style.display = "inline";
         }
-
-        /*
-        1-guilty-plea-mitigation-change
-        1-not-guilty-plea-mitigation-change
-
-        2-guilty-plea-mitigation-change
-        2-not-guilty-plea-mitigation-change
-        */
         
         
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -105,7 +106,6 @@
         /* ************** */
         /* DISAGREE CHECK */
         var disagree = document.getElementById('disagree').innerHTML;
-
         if (disagree == "Yes") {
             document.getElementById('cya-disagree-detail').style.display = "block-inline";
         } else if (disagree == "No") {
@@ -158,8 +158,6 @@
         } else if (access_needs == "No") {
             document.getElementById('which-access-needs-group').style.display = "none";
         }
-
-
         /* ************************************* */
         /* ************************************* */
         /* ************************************* */
@@ -179,7 +177,6 @@
         /* ************************** */
         /* DEDUCT FROM EARNINGS CHECK */
         var deduct_from_earnings = document.getElementById('deduct-from-earnings').innerHTML;
-
         if (deduct_from_earnings == "Yes") {
             document.getElementById('employer-details').style.display = "block-inline";
         } else if (deduct_from_earnings == "No") {
@@ -203,12 +200,37 @@
         /* ********************** */
         /* MONTHLY OUTOINGS CHECK */
         var give_details_of_monthly_bills = document.getElementById('give-details-of-monthly-bills').innerHTML;
-        
+        var any_other_expenses = document.getElementById('any-other-expenses').innerHTML;
+                
         if (give_details_of_monthly_bills == "Yes") {
             document.getElementById('list-of-monthly-outgoings').style.display = "block-inline";
+            
+            
+            
+            
+            
+            
+            if (any_other_expenses == "Yes") {
+                document.getElementById('cya-amount-of-other-expenses').style.display = "block-inline";
+            } else if (any_other_expenses == "No") {
+                document.getElementById('cya-amount-of-other-expenses').style.display = "none";
+            }
+            
+            
+            
+            
+            
         } else if (give_details_of_monthly_bills == "No") {
             document.getElementById('list-of-monthly-outgoings').style.display = "none";
         }
+        
+        
+        
+
+        
+        
+        
+        
         
     }
 </script>
@@ -235,7 +257,7 @@
             </div>
             <div class="govuk-grid-column-one-third">
                 <p class="govuk-body" style="text-align: right">
-                    <a href="/map/your_details">
+                    <a href="/map/check-your-name-and-address">
                         Change
                     </a>
                 </p>
@@ -295,7 +317,7 @@
             </div>
             <div class="govuk-grid-column-one-third">
                 <p class="govuk-body" style="text-align: right">
-                    <a href="/map/your_details">
+                    <a href="/map/enter-other-details">
                         Change
                     </a>
                 </p>
@@ -438,6 +460,16 @@
         
         
         
+        
+        
+        
+        
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
         <!-- --------- -->
         <!-- --------- -->
         <!-- --------- -->
@@ -457,7 +489,7 @@
             </div>
             <div class="govuk-grid-column-one-third">
                 <p class="govuk-body" style="text-align: right">
-                    <a href="/map/your-plea">
+                    <a href="/map/your-plea#offence-1-plea-group">
                         Change
                     </a>
                 </p>
@@ -556,6 +588,20 @@
         
         
         
+        
+        
+        
+        
+        
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
         <!-- --------- -->
         <!-- --------- -->
         <!-- --------- -->
@@ -575,7 +621,7 @@
             </div>
             <div class="govuk-grid-column-one-third">
                 <p class="govuk-body" style="text-align: right">
-                    <a href="/map/your-plea">
+                    <a href="/map/your-plea#offence-2-plea-group">
                         Change
                     </a>
                 </p>
@@ -675,6 +721,19 @@
         
         
         
+        
+        
+        
+        
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
+        <!-- --------- -->
         <!-- --------- -->
         <!-- --------- -->
         <!-- --------- -->
@@ -694,7 +753,7 @@
             </div>
             <div class="govuk-grid-column-one-third">
                 <p class="govuk-body" style="text-align: right">
-                    <a href="/map/your-plea">
+                    <a href="/map/your-plea#offence-3-plea-group">
                         Change
                     </a>
                 </p>
@@ -794,6 +853,11 @@
         
         
         
+        
+        
+        
+        
+        
         <!-- ----------------------- -->
         <!-- ----------------------- -->
         <!-- ----------------------- -->
@@ -850,13 +914,6 @@
                     </div>
 
         </div>
-        
-        
-        
-        
-        
-        
-        
         
         <!-- ------------------ -->
         <!-- ------------------ -->
@@ -1358,6 +1415,7 @@
                 </div>
 
                 <div id="deduct-from-benefits-details">
+                    
                     <!-- ------------------------ -->
                     <!-- DEDUCT FROM YOUR BENEFTS -->
                     <div class="govuk-grid-row margin-top-30">
@@ -1517,7 +1575,7 @@
                     </div>
 
                     <!-- --------------- -->
-                    <!-- Household bills -->
+                    <!-- HOUSEHOLD BILLS -->
                     <div id="cya-offence-3-mitigation">
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-one-third">
@@ -1552,6 +1610,24 @@
                         </div>
                     </div>
 
+                    <!-- ------------------ -->
+                    <!-- CHILD MAINTENTANCE -->
+                    <div id="cya-offence-3-mitigation">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-third">
+                                <p class="govuk-body margin-bottom-0">Child maintenance</p>
+                            </div>
+                            <div class="govuk-grid-column-two-thirds">
+                                <p class="margin-bottom-0">
+                                    £{{data['child-maintenance']}} 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="margin-top-10 margin-bottom-15">
+                            <hr class="govuk-section-break govuk-section-break--visible">
+                        </div>
+                    </div>
+
                     <!-- ------------------- -->
                     <!-- ANY OTHER EXPENSES? -->
                     <div id="cya-offence-3-mitigation">
@@ -1561,7 +1637,7 @@
                             </div>
                             <div class="govuk-grid-column-two-thirds">
                                 <p class="margin-bottom-0">
-                                    {{data['any-other-expenses']}} 
+                                    <span id="any-other-expenses">{{data['any-other-expenses']}}</span>
                                 </p>
                             </div>
                         </div>
@@ -1572,7 +1648,7 @@
 
                         <!-- ------------------- -->
                         <!-- AMOUNT OF OTHER EXPENSES -->
-                        <div id="cya-offence-3-mitigation">
+                        <div id="cya-amount-of-other-expenses">
                             <div class="govuk-grid-row">
                                 <div class="govuk-grid-column-one-third">
                                     <p class="govuk-body margin-bottom-0">Amount of other expenses</p>
@@ -1588,23 +1664,23 @@
                             </div>
                         </div>
 
-                        <!-- -------------------- -->
-                        <!-- MONTHLY AMOUNT TOTAL -->
-                        <div id="cya-offence-3-mitigation">
-                            <div class="govuk-grid-row">
-                                <div class="govuk-grid-column-one-third">
-                                    <p class="govuk-body margin-bottom-0">Monthly amount total</p>
-                                </div>
-                                <div class="govuk-grid-column-two-thirds">
-                                    <p class="margin-bottom-0">
-                                        £{{data['total-amount-of-all-expenses']}} 
-                                    </p>
-                                </div>
+                    <!-- -------------------- -->
+                    <!-- MONTHLY AMOUNT TOTAL -->
+                    <div id="cya-offence-3-mitigation">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-third">
+                                <p class="govuk-body margin-bottom-0">Monthly amount total</p>
                             </div>
-                            <div class="margin-top-10 margin-bottom-15">
-                                <hr class="govuk-section-break govuk-section-break--visible">
+                            <div class="govuk-grid-column-two-thirds">
+                                <p class="margin-bottom-0">
+                                    £{{data['total-amount-of-all-expenses']}} 
+                                </p>
                             </div>
                         </div>
+                        <div class="margin-top-10 margin-bottom-15">
+                            <hr class="govuk-section-break govuk-section-break--visible">
+                        </div>
+                    </div>
 
             </div>
 

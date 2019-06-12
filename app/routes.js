@@ -59,7 +59,8 @@ router.post('/map/start-page', function (req, res) {
     req.session.data['offence-3-wording-3'] = "Contrary to section 14, 15(2) and 15(4) of the Road Traffic Regulation Act 1984"
     req.session.data['offence-3-wording-4'] = "This offence carries penalty points"
                             
-        
+    req.session.data['i-made-it-to-check-your-answers'] = "No"
+    
     res.redirect('/map/find-your-case')
         
 });
@@ -80,10 +81,17 @@ router.post('/map/find-your-case', function (req, res) {
 /* CHECK YOUR NAME AND ADDRESS */
 router.post('/map/check-your-name-and-address', function (req, res) {
         
-    var are_these_details_correct = req.session.data['are-these-details-correct'];
+    var are_these_details_correct = req.session.data['are-these-details-correct']
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
         
     if (are_these_details_correct == "Yes") {
-        res.redirect('/map/enter-other-details')
+        
+        if (check_your_answers == "Yes") {
+            res.redirect('/map/cya')
+        } else if (check_your_answers == "No") {
+            res.redirect('/map/enter-other-details')
+        }        
+        
     } else if (are_these_details_correct == "No") {
         res.redirect('/map/changes-to-your-name-and-address')
     } else if (are_these_details_correct == "") {
@@ -106,6 +114,7 @@ router.post('/map/changes-to-your-name-and-address', function (req, res) {
     var new_defendant_address_line_4 = req.session.data['new-defendant-address-line-4']
     var new_defendant_address_line_5 = req.session.data['new-defendant-address-line-5']
     var new_defendant_address_postcode = req.session.data['new-defendant-address-postcode']
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
 
     if (new_defendant_first_name != "") {
         req.session.data['defendant-first-name'] = new_defendant_first_name
@@ -132,7 +141,11 @@ router.post('/map/changes-to-your-name-and-address', function (req, res) {
         req.session.data['defendant-address-postcode'] = new_defendant_address_postcode
     }
     
-    res.redirect('/map/enter-other-details')
+    if (check_your_answers == "Yes") {
+        res.redirect('/map/cya')
+    } else if (check_your_answers == "No") {
+        res.redirect('/map/enter-other-details')
+    }        
         
 });
 
@@ -141,8 +154,14 @@ router.post('/map/changes-to-your-name-and-address', function (req, res) {
 /* ******************* */
 /* ENTER OTHER DETAILS */
 router.post('/map/enter-other-details', function (req, res) {
+    
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
         
-    res.redirect('/map/driving-license-number')
+    if (check_your_answers == "Yes") {
+        res.redirect('/map/cya')
+    } else if (check_your_answers == "No") {
+        res.redirect('/map/driving-license-number')
+    }        
         
 });
 
@@ -152,7 +171,13 @@ router.post('/map/enter-other-details', function (req, res) {
 /* DRIVING LICENSE NUMBER */
 router.post('/map/driving-license-number', function (req, res) {
         
-    res.redirect('/map/your-plea')
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
+        
+    if (check_your_answers == "Yes") {
+        res.redirect('/map/cya')
+    } else if (check_your_answers == "No") {
+        res.redirect('/map/your-plea')
+    }        
         
 });
 
@@ -182,8 +207,14 @@ router.post('/map/guilty-plea', function (req, res) {
 /* GUILTY PLEA MITIGATION */
 router.post('/map/guilty-plea-mitigation', function (req, res) {
         
-    res.redirect('/map/not-guilty-plea')
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
         
+    if (check_your_answers == "Yes") {
+        res.redirect('/map/cya')
+    } else if (check_your_answers == "No") {
+        res.redirect('/map/not-guilty-plea')
+    }        
+    
 });
 
 /* *************** */
@@ -196,13 +227,19 @@ router.post('/map/not-guilty-plea', function (req, res) {
         
 });
 
-/* *************** */
-/* *************** */
-/* *************** */
-/* NOT GUILTY PLEA */
+/* ****************** */
+/* ****************** */
+/* ****************** */
+/* YOUR COURT HEARING */
 router.post('/map/your-court-hearing', function (req, res) {
         
-    res.redirect('/map/your-finances')
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
+        
+    if (check_your_answers == "Yes") {
+        res.redirect('/map/cya')
+    } else if (check_your_answers == "No") {
+        res.redirect('/map/your-finances')
+    }        
         
 });
 
@@ -211,8 +248,29 @@ router.post('/map/your-court-hearing', function (req, res) {
 /* YOUR FINANCE */
 router.post('/map/your-finances', function (req, res) {
         
-    res.redirect('/map/your-income')
+    var give_us_income_or_benefits_details = req.session.data['give-us-income-or-benefits-details']
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
         
+    if (give_us_income_or_benefits_details == "Yes") {
+        res.redirect('/map/your-income')
+    } else if (check_your_answers == "No") {
+        if (check_your_answers == "Yes") {
+            res.redirect('/map/cya')
+        } else if (check_your_answers == "No") {
+            res.redirect('/map/your-outgoings')
+        }        
+    }        
+    
+    
+    
+    
+    
+    if (check_your_answers == "Yes") {
+        res.redirect('/map/cya')
+    } else if ((check_your_answers == "No") || (check_your_answers == "I have no income")) {
+        res.redirect('/map/your-income')
+    }        
+            
 });
 
 /* *********** */
@@ -251,7 +309,13 @@ router.post('/map/your-employment', function (req, res) {
 /* YOUR BENEFITS */
 router.post('/map/your-benefits', function (req, res) {
         
-    res.redirect('/map/deduct-from-your-benefits')
+    var are_you_claiming_benefits = req.session.data['are-you-claiming-benefits'];
+    
+    if (are_you_claiming_benefits == "Yes") {
+        res.redirect('/map/deduct-from-your-benefits')
+    } else if (are_you_claiming_benefits == "No") {
+        res.redirect('/map/your-outgoings')
+    }
         
 });
 
@@ -271,7 +335,14 @@ router.post('/map/deduct-from-your-benefits', function (req, res) {
 /* YOUR OUTGOINGS */
 router.post('/map/your-outgoings', function (req, res) {
         
-    res.redirect('/map/your-monthly-outgoings')
+    var give_details_of_monthly_bills = req.session.data['give-details-of-monthly-bills'];
+    
+    if (give_details_of_monthly_bills == "Yes") {
+        res.redirect('/map/your-monthly-outgoings')
+    } else if (give_details_of_monthly_bills == "No") {
+        req.session.data['i-made-it-to-check-your-answers'] = "Yes"
+        res.redirect('/map/cya')
+    }
         
 });
 
@@ -301,7 +372,9 @@ router.post('/map/your-monthly-outgoings', function (req, res) {
     }
 
     req.session.data['total-amount-of-all-expenses'] = parseFloat(total).toFixed(2)
-        
+    
+    req.session.data['i-made-it-to-check-your-answers'] = "Yes"
+   
     res.redirect('/map/cya')
         
 });
