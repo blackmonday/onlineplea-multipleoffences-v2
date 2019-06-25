@@ -187,7 +187,41 @@ router.post('/map/driving-license-number', function (req, res) {
 /* YOUR PLEA */
 router.post('/map/your-plea', function (req, res) {
         
-    res.redirect('/map/guilty-plea')
+    var offence_1_plea = req.session.data['offence-1-plea']
+    var offence_2_plea = req.session.data['offence-2-plea']
+    var offence_3_plea = req.session.data['offence-3-plea']
+    
+    // RESET GUILTY COME TO COURT
+    //req.session.data['guilty-come-to-court'] = ""
+        
+    if ((offence_1_plea == "Not guilty") || (offence_2_plea == "Not guilty") || (offence_3_plea == "Not guilty")) {
+        res.redirect('/map/not-guilty-plea')
+    }
+    
+    if ((offence_1_plea == "Guilty") && (offence_2_plea == "Guilty") && (offence_3_plea == "Guilty")) {
+        res.redirect('/map/guilty-plea')
+    }
+    
+    //res.redirect('/map/guilty-plea')
+        
+});
+
+/* *************** */
+/* *************** */
+/* *************** */
+/* NOT GUILTY PLEA */
+router.post('/map/not-guilty-plea', function (req, res) {
+    
+    var offence_1_plea = req.session.data['offence-1-plea']
+    var offence_2_plea = req.session.data['offence-2-plea']
+    var offence_3_plea = req.session.data['offence-3-plea']
+        
+    if ((offence_1_plea == "Guilty") || (offence_2_plea == "Guilty") || (offence_3_plea == "Guilty")) {
+        req.session.data['guilty-come-to-court'] = "Yes"
+        res.redirect('/map/guilty-plea-mitigation')
+    }     
+        
+    res.redirect('/map/your-court-hearing')
         
 });
 
@@ -196,7 +230,7 @@ router.post('/map/your-plea', function (req, res) {
 /* *********** */
 /* GUILTY PLEA */
 router.post('/map/guilty-plea', function (req, res) {
-        
+    
     res.redirect('/map/guilty-plea-mitigation')
         
 });
@@ -207,24 +241,24 @@ router.post('/map/guilty-plea', function (req, res) {
 /* GUILTY PLEA MITIGATION */
 router.post('/map/guilty-plea-mitigation', function (req, res) {
         
+    var guilty_come_to_court = req.session.data['guilty-come-to-court']
+    
+    if (guilty_come_to_court == "Yes") {
+        res.redirect('/map/your-court-hearing')
+    } if (guilty_come_to_court == "No") {
+        res.redirect('/map/your-finances')
+    } 
+    
+    /*
     var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
-        
+
     if (check_your_answers == "Yes") {
         res.redirect('/map/cya')
     } else if (check_your_answers == "No") {
-        res.redirect('/map/not-guilty-plea')
-    }        
+        res.redirect('/map/your-court-hearing')
+    }
+    */
     
-});
-
-/* *************** */
-/* *************** */
-/* *************** */
-/* NOT GUILTY PLEA */
-router.post('/map/not-guilty-plea', function (req, res) {
-        
-    res.redirect('/map/your-court-hearing')
-        
 });
 
 /* ****************** */
@@ -278,8 +312,14 @@ router.post('/map/your-finances', function (req, res) {
 /* *********** */
 /* YOUR INCOME */
 router.post('/map/your-income', function (req, res) {
-        
-    res.redirect('/map/deductions-from-earnings')
+    
+    var employment_status = req.session.data['employment-status']
+    
+    if ((employment_status == "Employed (full or part-time)") || (employment_status == "Self-employed")) {
+        res.redirect('/map/deductions-from-earnings')
+    }
+
+    res.redirect('/map/your-benefits')
         
 });
 
@@ -288,8 +328,19 @@ router.post('/map/your-income', function (req, res) {
 /* ************************ */
 /* DEDUCTIONS FROM EARNINGS */
 router.post('/map/deductions-from-earnings', function (req, res) {
+    
+    var deduct_from_earnings = req.session.data['deduct-from-earnings'];
+    
+    if (deduct_from_earnings == "Yes") {
+        res.redirect('/map/your-employment')
+    } else if (deduct_from_earnings == "No") {
+        res.redirect('/map/your-outgoings')
+    }
+    
+    
+    
+    
         
-    res.redirect('/map/your-employment')
         
 });
 

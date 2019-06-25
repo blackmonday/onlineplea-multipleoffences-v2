@@ -7,6 +7,38 @@
 
 {% block content %}
 
+<script>
+    window.onload = function() {
+        
+        /************ */
+        /************ */
+        /* PLEA CHECK */
+        var offence_1_plea = document.getElementById('offence-1-plea').innerHTML;
+        var offence_2_plea = document.getElementById('offence-2-plea').innerHTML;
+        var offence_3_plea = document.getElementById('offence-3-plea').innerHTML;
+        
+        if (offence_1_plea != "Not guilty") {
+            document.getElementById('offence-1-main-group').style.display = "none";
+        }
+        if (offence_2_plea != "Not guilty") {
+            document.getElementById('offence-2-main-group').style.display = "none";
+        }
+        if (offence_3_plea != "Not guilty") {
+            document.getElementById('offence-3-main-group').style.display = "none";
+        }
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+    }
+</script>
+
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
 {% include "includes/data-check.html" %}
@@ -22,7 +54,7 @@
         <p class="govuk-heading-s">You need to explain why you think you’re not guilty:</p>
         <ul class="govuk-list govuk-list--bullet">
             <li>the magistrates will review this before your court hearing</li>
-            <li>you’ll get the chance to explain again at this hearing and show any         relevant documents</li>
+            <li>you’ll get the chance to explain again at this hearing and show any relevant documents</li>
         </ul>
         
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -60,9 +92,9 @@
                     </span>
                 </div>
                 
-            </fieldset>
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+            </fieldset>
 
             <!-- OFFENCE 2 -->
             <fieldset id="offence-2-main-group" class="govuk-fieldset" aria-describedby="offence-2-mitigation-hint">
@@ -94,9 +126,9 @@
                     </span>
                 </div>
                 
-            </fieldset>
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+            </fieldset>
 
             <!-- OFFENCE 3 -->
             <fieldset id="offence-3-main-group" class="govuk-fieldset" aria-describedby="offence-3-mitigation-hint">
@@ -129,9 +161,9 @@
                     </span>
                 </div>
                 
-            </fieldset>
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
                 
-            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+            </fieldset>
                 
             <!-- EVIDENCE IN THIS NOTICE -->
             <fieldset id="evidence-main-group" class="govuk-fieldset" aria-describedby="offence-3-mitigation-hint">

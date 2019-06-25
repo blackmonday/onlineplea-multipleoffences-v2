@@ -1,4 +1,3 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -6,6 +5,53 @@
 {% endblock %}
 
 {% block content %}
+
+<script>
+    window.onload = function() {
+        
+        /************ */
+        /************ */
+        /* PLEA CHECK */
+        var offence_1_plea = document.getElementById('offence-1-plea').innerHTML;
+        var offence_2_plea = document.getElementById('offence-2-plea').innerHTML;
+        var offence_3_plea = document.getElementById('offence-3-plea').innerHTML;
+        
+        if (offence_1_plea != "Guilty") {
+            document.getElementById('offence-1-main-group').style.display = "none";
+        }
+        if (offence_2_plea != "Guilty") {
+            document.getElementById('offence-2-main-group').style.display = "none";
+        }
+        if (offence_3_plea != "Guilty") {
+            document.getElementById('offence-3-main-group').style.display = "none";
+        }
+        
+
+        
+        
+        
+        
+        
+        
+        /* ************************** */
+        /* ************************** */
+        /* GUILTY COME TO COURT CHECK */
+        var guilty_come_to_court = document.getElementById('guilty-come-to-court').innerHTML;
+        
+        if (guilty_come_to_court == "No") {
+            document.getElementById('evidence-main-group').style.display = "none";
+        }
+
+        
+        
+
+        
+        
+        
+        
+        
+    }
+</script>
 
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
@@ -58,9 +104,9 @@
                     </span>
                 </div>
                 
-            </fieldset>
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+            </fieldset>
 
             <!-- OFFENCE 2 -->
             <fieldset id="offence-2-main-group" class="govuk-fieldset" aria-describedby="offence-2-mitigation-hint">
@@ -92,9 +138,9 @@
                     </span>
                 </div>
                 
-            </fieldset>
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+            </fieldset>
 
             <!-- OFFENCE 3 -->
             <fieldset id="offence-3-main-group" class="govuk-fieldset" aria-describedby="offence-3-mitigation-hint">
@@ -127,10 +173,56 @@
                     </span>
                 </div>
                 
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
             </fieldset>
 
-            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                
+                
+                
+                
+            <!-- EVIDENCE IN THIS NOTICE -->
+            <fieldset id="evidence-main-group" class="govuk-fieldset" aria-describedby="offence-3-mitigation-hint">
 
+                <h2 class="govuk-heading-m">
+                    Evidence in this notice
+                </h2>
+                
+                    <h3 class="govuk-heading-s">
+                        Do you disagree with any of the statements in the notice sent to you?
+                    </h3>
+
+                    <div class="govuk-radios govuk-radios--conditional margin-bottom-30" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="disagree-1" name="disagree" type="radio" value="Yes" data-aria-controls="disagree-conditional-1" {{ checked('disagree','Yes') }}>
+                            <label class="govuk-label govuk-radios__label" for="disagree-1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="disagree-conditional-1">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="more-detail">
+                                    Tell us what you don't agree with
+                                </label>
+                                <textarea class="govuk-textarea" id="disagree-detail" name="disagree-detail" rows="5" aria-describedby="disagree-detail-hint">{{data['disagree-detail']}}</textarea>
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="disagree-2" name="disagree" type="radio" value="No" {{ checked('disagree','No') }}>
+                            <label class="govuk-label govuk-radios__label" for="disagree-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                
+            </fieldset>
+                
+                
+                
+                
+                
+                
+                
             <button type="submit" class="govuk-button margin-top-0 margin-bottom-15">
                 Continue
             </button>

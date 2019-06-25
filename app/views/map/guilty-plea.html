@@ -7,6 +7,29 @@
 
 {% block content %}
 
+<script>
+    window.onload = function() {
+        
+        /************ */
+        /************ */
+        /* PLEA CHECK */
+        var offence_1_plea = document.getElementById('offence-1-plea').innerHTML;
+        var offence_2_plea = document.getElementById('offence-2-plea').innerHTML;
+        var offence_3_plea = document.getElementById('offence-3-plea').innerHTML;
+        
+        if (offence_1_plea != "Guilty") {
+            document.getElementById('offence-1-group').style.display = "none";
+        }
+        if (offence_2_plea != "Guilty") {
+            document.getElementById('offence-2-group').style.display = "none";
+        }
+        if (offence_3_plea != "Guilty") {
+            document.getElementById('offence-3-group').style.display = "none";
+        }
+        
+    }
+</script>
+
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
 {% include "includes/data-check.html" %}
@@ -32,63 +55,75 @@
             <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
                 <!-- OFFENCE 1 -->
-                <h2 id="offence-1-main-group" class="govuk-heading-m">
-                    Offence 1 of 3
-                </h2>
-                <details class="govuk-details">
-                    <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text govuk-!-font-weight-bold">
-                            {{data['offence-1-title']}}
-                        </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                            <p class="govuk-body">{{data['offence-1-wording-1']}}</p>
-                            <p class="govuk-body">{{data['offence-1-wording-2']}}</p>
-                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-1-wording-3']}}</p>
-                    </div>
-                </details>
+                <div id="offence-1-group">
+                    
+                    <h2 id="offence-1-main-group" class="govuk-heading-m">
+                        Offence 1 of 3
+                    </h2>
+                    <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text govuk-!-font-weight-bold">
+                                {{data['offence-1-title']}}
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                                <p class="govuk-body">{{data['offence-1-wording-1']}}</p>
+                                <p class="govuk-body">{{data['offence-1-wording-2']}}</p>
+                                <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-1-wording-3']}}</p>
+                        </div>
+                    </details>
 
-                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+                </div>
+                
                 <!-- OFFENCE 2 -->
-                <h2 id="offence-2-main-group" class="govuk-heading-m">
-                    Offence 2 of 3
-                </h2>
-                <details class="govuk-details">
-                    <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text govuk-!-font-weight-bold">
-                            {{data['offence-2-title']}}
-                        </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                            <p class="govuk-body">{{data['offence-2-wording-1']}}</p>
-                            <p class="govuk-body">{{data['offence-2-wording-2']}}</p>
-                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-2-wording-3']}}</p>
-                    </div>
-                </details>
+                <div id="offence-2-group">
+                
+                    <h2 id="offence-2-main-group" class="govuk-heading-m">
+                        Offence 2 of 3
+                    </h2>
+                    <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text govuk-!-font-weight-bold">
+                                {{data['offence-2-title']}}
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                                <p class="govuk-body">{{data['offence-2-wording-1']}}</p>
+                                <p class="govuk-body">{{data['offence-2-wording-2']}}</p>
+                                <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-2-wording-3']}}</p>
+                        </div>
+                    </details>
 
-                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+                </div>
+                
                 <!-- OFFENCE 3 -->
-                <h2 id="offence-3-main-group" class="govuk-heading-m">
-                    Offence 3 of 3
-                </h2>
-                <details class="govuk-details">
-                    <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text govuk-!-font-weight-bold">
-                            {{data['offence-3-title']}}
-                        </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                            <p class="govuk-body">{{data['offence-3-wording-1']}}</p>
-                            <p class="govuk-body">{{data['offence-3-wording-2']}}</p>
-                            <p class="govuk-body">{{data['offence-3-wording-4']}}</p>
-                            <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-3-wording-4']}}</p>
-                    </div>
-                </details>
+                <div id="offence-3-group">
+                
+                    <h2 id="offence-3-main-group" class="govuk-heading-m">
+                        Offence 3 of 3
+                    </h2>
+                    <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text govuk-!-font-weight-bold">
+                                {{data['offence-3-title']}}
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                                <p class="govuk-body">{{data['offence-3-wording-1']}}</p>
+                                <p class="govuk-body">{{data['offence-3-wording-2']}}</p>
+                                <p class="govuk-body">{{data['offence-3-wording-4']}}</p>
+                                <p class="govuk-body govuk-!-font-weight-bold">{{data['offence-3-wording-4']}}</p>
+                        </div>
+                    </details>
 
-                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+                </div>
+                
                 <h3 class="govuk-heading-s">
                     Would you like to come to court?
                 </h3>

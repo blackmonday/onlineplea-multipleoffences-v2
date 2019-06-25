@@ -7,6 +7,48 @@
 
 {% block content %}
 
+<script>
+    
+    window.onload = function() {
+        
+        /************ */
+        /************ */
+        /* PLEA CHECK */
+        var offence_1_plea = document.getElementById('offence-1-plea').innerHTML;
+        var offence_2_plea = document.getElementById('offence-2-plea').innerHTML;
+        var offence_3_plea = document.getElementById('offence-3-plea').innerHTML;
+        var guilty_come_to_court = document.getElementById('guilty-come-to-court').innerHTML;
+        
+        /* ALL NOT GUILTY */
+        if ((offence_1_plea == "Not guilty") && (offence_2_plea == "Not guilty") && (offence_3_plea == "Not guilty")) {
+            //alert('ALL NOT GUILTY');
+            //document.getElementById('offence-1-group').style.display = "none";
+        }
+        
+        /* COMBINATION OF NOT GUILTY & GUILTY, I WANT TO COME TO COURT */
+        if (guilty_come_to_court == "Yes") {
+            if ((offence_1_plea == "Not guilty") || (offence_2_plea == "Not guilty") || (offence_3_plea == "Not guilty") && (guilty_come_to_court == "Yes")) {
+                //alert('COMBINATION OF NOT GUILTY & GUILTY, I WANT TO COME TO COURT');
+                //document.getElementById('offence-1-group').style.display = "none";
+            }
+        }
+        
+        /* ALL GUILTY, I WANT TO COME TO COURT */
+        if ((guilty_come_to_court == "Yes") && (offence_1_plea == "Guilty") && (offence_2_plea == "Guilty") && (offence_3_plea == "Guilty")) {
+            //alert('ALL GUILTY, I WANT TO COME TO COURT');
+            document.getElementById('witness-group').style.display = "none";
+            document.getElementById('court-dates-group').style.display = "none";
+            document.getElementById('witness-group').style.display = "none";
+        }
+
+        
+    }
+        
+
+    
+</script>
+
+
 {% include "includes/phase-banner.html" %}
 {% include "includes/breadcrumb_back.html" %}
 {% include "includes/data-check.html" %}
@@ -23,7 +65,7 @@
         <div class="govuk-form-group">
             
             <!-- WITNESSES -->
-            <div class="govuk-form-group witness-group">
+            <div id="witness-group" class="govuk-form-group witness-group">
 
                 <h2 class="govuk-heading-m">Witnesses</h2>
 
@@ -73,7 +115,7 @@
             </div>
                 
             <!-- COURT DATES -->
-            <div class="govuk-form-group court-dates-group">
+            <div id="court-dates-group" class="govuk-form-group court-dates-group">
 
                 <h2 class="govuk-heading-m margin-top-60">Court dates</h2>
 
@@ -120,7 +162,7 @@
             </div>
                 
             <!-- LANGUAGES -->
-            <div class="govuk-form-group languages-group">
+            <div id="languages-group" class="govuk-form-group languages-group">
 
                 <h2 class="govuk-heading-m margin-top-60">Languages</h2>
 
@@ -189,7 +231,7 @@
             </div>
                 
             <!-- DISABILITY OR ACCESS NEEDS -->
-            <div class="govuk-form-group access-needs-group">
+            <div id="access-needs-group" class="govuk-form-group access-needs-group">
 
                 <h2 class="govuk-heading-m margin-top-60">Disabilities or access needs</h2>
 
