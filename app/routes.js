@@ -331,16 +331,19 @@ router.post('/map/deductions-from-earnings', function (req, res) {
     
     var deduct_from_earnings = req.session.data['deduct-from-earnings'];
     
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
+    
     if (deduct_from_earnings == "Yes") {
         res.redirect('/map/your-employment')
     } else if (deduct_from_earnings == "No") {
-        res.redirect('/map/your-outgoings')
-    }
-    
-    
-    
-    
         
+        if (check_your_answers == "Yes") {
+            res.redirect('/map/cya')
+        } else if (check_your_answers == "No") {
+            res.redirect('/map/your-outgoings')
+        }        
+        
+    }
         
 });
 
@@ -362,11 +365,34 @@ router.post('/map/your-benefits', function (req, res) {
         
     var are_you_claiming_benefits = req.session.data['are-you-claiming-benefits'];
     
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
+    
     if (are_you_claiming_benefits == "Yes") {
         res.redirect('/map/deduct-from-your-benefits')
     } else if (are_you_claiming_benefits == "No") {
-        res.redirect('/map/your-outgoings')
+        
+        if (check_your_answers == "Yes") {
+            res.redirect('/map/cya')
+        } else if (check_your_answers == "No") {
+            res.redirect('/map/your-outgoings')
+        }        
+        
     }
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
         
 });
 
@@ -376,8 +402,14 @@ router.post('/map/your-benefits', function (req, res) {
 /* DEDUCT FROM YOUR BENEFITS */
 router.post('/map/deduct-from-your-benefits', function (req, res) {
         
-    res.redirect('/map/your-outgoings')
-        
+    var check_your_answers = req.session.data['i-made-it-to-check-your-answers']
+    
+    if (check_your_answers == "Yes") {
+        res.redirect('/map/cya')
+    } else if (check_your_answers == "No") {
+        res.redirect('/map/your-outgoings')
+    }        
+                
 });
 
 /* *************** */

@@ -9,6 +9,7 @@
 {% block content %}
 
 <script>
+    
     window.onload = function() {
         
         /*************** */
@@ -37,6 +38,23 @@
         if (defendantAddressLine5 == "<br>") {
             document.getElementById('defendant-address-line-5').style.display = "none"
         }
+
+        
+        
+        
+        
+        /* ******************** */
+        /* ******************** */
+        /* ******************** */
+        /* CONTACT NUMBER CHECK */
+        var contact_number = document.getElementById('contact-number').innerHTML;
+        if (contact_number == "") {
+            document.getElementById('contact-number').innerHTML = " &#8212;"
+        }
+
+        
+        
+        
         
         /********** */
         /********** */
@@ -50,6 +68,11 @@
             document.getElementById('cya-dl-yes').style.display = "none";
             document.getElementById('cya-dl-no').style.display = "inline";
         }
+
+        
+        
+        
+        
         
         /* **************** */
         /* **************** */
@@ -116,9 +139,7 @@
         } else {
             document.getElementById('evidence-in-this-notice').style.display = "none";
         }
-        
-        
-        
+
         
         
         
@@ -142,31 +163,7 @@
             document.getElementById('bring-your-own-witness').style.display = "block-inline";
             document.getElementById('court-dates-group').style.display = "block-inline";
         }
-        
-        
-        
-                
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -182,7 +179,7 @@
         } else if (disagree == "No") {
             document.getElementById('cya-disagree-detail').style.display = "none";
         }
-        
+
         
         
         
@@ -215,10 +212,7 @@
         } else if (dates_to_avoid == "No") {
             document.getElementById('cya-dates-to-avoid-details').style.display = "none";
         }
-        
-        
-        
-        
+
         
         
         
@@ -235,7 +229,7 @@
         } else if (do_you_need_an_interpreter == "No") {
             document.getElementById('cya-which-language').style.display = "none";
         }
-        
+
         
         
         
@@ -252,8 +246,7 @@
         } else if (access_needs == "No") {
             document.getElementById('which-access-needs-group').style.display = "none";
         }
-        
-        
+
         
         
         
@@ -340,8 +333,17 @@
         var give_us_income_or_benefits_details = document.getElementById('give-us-income-or-benefits-details').innerHTML;
         
         if (give_us_income_or_benefits_details == "Yes") {
+            
             document.getElementById('income-details-group').style.display = "block-inline";
-            document.getElementById('your-benefits-group').style.display = "block-inline";
+            
+            if ((employment_status == "Unemployed") || (employment_status == "Other (for example, retired, student)")) {
+                document.getElementById('your-benefits-group').style.display = "block-inline";
+                document.getElementById('deduction-from-earnings-group').style.display = "none";
+                
+            } else {
+                document.getElementById('your-benefits-group').style.display = "none";
+            }
+            
         } else if ((give_us_income_or_benefits_details == "No") || (give_us_income_or_benefits_details == "I have no income or benefits")) {
             document.getElementById('income-details-group').style.display = "none";
             document.getElementById('your-benefits-group').style.display = "none";
@@ -370,10 +372,10 @@
         
         
         
-        /*************** */
-        /*************** */
-        /*************** */
-        /* ADDRESS CHECK */
+        /** ********************* */
+        /** ********************* */
+        /** ********************* */
+        /* EMPLOYER ADDRESS CHECK */
         var employerAddressLine1 = document.getElementById('employer-address-line-1').innerHTML;
         var employerAddressLine2 = document.getElementById('employer-address-line-2').innerHTML;
         var employerAddressLine3 = document.getElementById('employer-address-line-3').innerHTML;
@@ -395,10 +397,7 @@
         if (employerAddressLine5 == "<br>") {
             document.getElementById('employer-address-line-5').style.display = "none"
         }
-        
-        
-        
-        
+
         
         
         
@@ -415,7 +414,24 @@
         } else if (are_you_claiming_benefits == "No") {
             document.getElementById('deduct-from-benefits-details').style.display = "none";
         }
+
         
+        
+        
+        
+        
+        /* ************************** */
+        /* ************************** */
+        /* ************************** */
+        /* DEDUCT FROM BENEFITS CHECK */
+        var deduct_from_benefits = document.getElementById('deduct-from-benefits').innerHTML;
+        
+        if (deduct_from_benefits == "Yes") {
+            document.getElementById('benefits-details-group').style.display = "block-inline";
+        } else if (deduct_from_benefits == "No") {
+            document.getElementById('benefits-details-group').style.display = "none";
+        }
+
         
         
         
@@ -442,6 +458,7 @@
         }
         
     }
+    
 </script>
 
 {% include "includes/phase-banner.html" %}
@@ -582,7 +599,7 @@
                 </div>
                 <div class="govuk-grid-column-two-thirds">
                     <p class="margin-bottom-0">
-                        {{data['contact-number']}} 
+                        <span id="contact-number">{{data['contact-number']}}</span>
                     </p>
                 </div>
             </div>
@@ -1366,6 +1383,12 @@
 
         </div>
         
+        
+        
+        
+        
+        
+        
         <!-- ------------- -->
         <!-- ------------- -->
         <!-- ------------- -->
@@ -1438,7 +1461,7 @@
 
                 <!-- ---------------------- -->
                 <!-- YOUR EMPLOYMENT STATUS -->
-                <div id="cya-offence-3-mitigation">
+                <div id="cya-employment-status">
                     <div class="govuk-grid-row">
                         <div class="govuk-grid-column-one-third">
                             <p class="govuk-body margin-bottom-0">Your employment status</p>
@@ -1474,7 +1497,7 @@
 
                 <!-- ----------- -->
                 <!-- YOUR INCOME -->
-                <div id="cya-offence-3-mitigation">
+                <div id="cya-your-income">
                     <div class="govuk-grid-row">
                         <div class="govuk-grid-column-one-third">
                             <p class="govuk-body margin-bottom-0">Your income</p>
@@ -1692,24 +1715,25 @@
                         </div>
                     </div>
 
-                        <!-- --------------------- -->
-                        <!-- DEDUCT FROM BENEFITS? -->
-                        <div id="cya-offence-3-mitigation">
-                            <div class="govuk-grid-row">
-                                <div class="govuk-grid-column-one-third">
-                                    <p class="govuk-body margin-bottom-0">If you need to pay a penalty, would you like us to deduct it from your benefits?</p>
-                                </div>
-                                <div class="govuk-grid-column-two-thirds">
-                                    <p class="margin-bottom-0">
-                                        {{data['deduct-from-benefits']}} 
-                                    </p>
-                                </div>
+                    <!-- --------------------- -->
+                    <!-- DEDUCT FROM BENEFITS? -->
+                    <div id="cya-offence-3-mitigation">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-third">
+                                <p class="govuk-body margin-bottom-0">If you need to pay a penalty, would you like us to deduct it from your benefits?</p>
                             </div>
-                            <div class="margin-top-10 margin-bottom-15">
-                                <hr class="govuk-section-break govuk-section-break--visible">
+                            <div class="govuk-grid-column-two-thirds">
+                                <p class="margin-bottom-0">
+                                    <span id="deduct-from-benefits">{{data['deduct-from-benefits']}}</span>
+                                </p>
                             </div>
                         </div>
+                        <div class="margin-top-10 margin-bottom-15">
+                            <hr class="govuk-section-break govuk-section-break--visible">
+                        </div>
+                    </div>
 
+                    <span id="benefits-details-group">
                         <!-- -------------------------------- -->
                         <!-- WHICH BENEFITS ARE YOU CLAIMING? -->
                         <div id="cya-offence-3-mitigation">
@@ -1745,6 +1769,8 @@
                                 <hr class="govuk-section-break govuk-section-break--visible">
                             </div>
                         </div>
+                    </span>
+                    
                 </div>
 
         </div>
