@@ -175,53 +175,7 @@
                 
                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-            </fieldset>
-
-                
-                
-                
-                
-            <!-- EVIDENCE IN THIS NOTICE -->
-            <fieldset id="evidence-main-group" class="govuk-fieldset" aria-describedby="offence-3-mitigation-hint">
-
-                <h2 class="govuk-heading-m">
-                    Evidence in this notice
-                </h2>
-                
-                    <h3 class="govuk-heading-s">
-                        Do you disagree with any of the statements in the notice sent to you?
-                    </h3>
-
-                    <div class="govuk-radios govuk-radios--conditional margin-bottom-30" data-module="radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="disagree-1" name="disagree" type="radio" value="Yes" data-aria-controls="disagree-conditional-1" {{ checked('disagree','Yes') }}>
-                            <label class="govuk-label govuk-radios__label" for="disagree-1">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="disagree-conditional-1">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-!-font-weight-bold" for="more-detail">
-                                    Tell us what you don't agree with
-                                </label>
-                                <textarea class="govuk-textarea" id="disagree-detail" name="disagree-detail" rows="5" aria-describedby="disagree-detail-hint">{{data['disagree-detail']}}</textarea>
-                            </div>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="disagree-2" name="disagree" type="radio" value="No" {{ checked('disagree','No') }}>
-                            <label class="govuk-label govuk-radios__label" for="disagree-2">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                
-            </fieldset>
-                
-                
-                
-                
-                
-                
+            </fieldset>           
                 
             <button type="submit" class="govuk-button margin-top-0 margin-bottom-15">
                 Continue
