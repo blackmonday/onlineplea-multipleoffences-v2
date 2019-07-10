@@ -52,8 +52,8 @@ router.post('/map/start-page', function (req, res) {
     /* ********* */
     /* ********* */
     /* OFFENCE 3 */
-    req.session.data['offence-3-title'] = "Speeding - exceed 30 miles per hour on restricted road - manned camera device"
-    req.session.data['offence-3-wording-1'] = "Speeding - exceed 30 miles per hour on restricted road - automatic camera device 07/03/2019 -- On 07/03/2019 12:03hrs, at BEESTON a Audi A4 VRM N15 REP on a namely Lordship Lane, Lower Broughton at a speed exceeding 30 miles per hour."
+    req.session.data['offence-3-title'] = "Speeding - exceed 30 mph on restricted road - manned equipment"
+    req.session.data['offence-3-wording-1'] = "On 07/03/2019 at BEESTON drove a motor vehicle, namely passenger carrying vehicle Audi A4 VRM N15 REP, on a restricted road, namely Lordship Lane, Lower Broughton, at a speed exceeding 30 miles per hour."
     req.session.data['offence-3-wording-2'] = "**SPEED RECORDED 37MPH**"
     req.session.data['offence-3-wording-3'] = "Contrary to section 14, 15(2) and 15(4) of the Road Traffic Regulation Act 1984"
     req.session.data['offence-3-wording-4'] = "This offence carries penalty points"
