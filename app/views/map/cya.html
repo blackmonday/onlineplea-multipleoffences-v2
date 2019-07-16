@@ -134,11 +134,13 @@
             document.getElementById('offence-3-come-to-court-group').style.display = "inline";
         }
         
-        if ((offence_3_plea == "Guilty") || (offence_3_plea == "Guilty") || (offence_3_plea == "Guilty")) {
-            //document.getElementById('evidence-in-this-notice').style.display = "block-inline";
+
+        if ((offence_1_plea == "Guilty") && (offence_2_plea == "Guilty") && (offence_3_plea == "Guilty")) {
+            document.getElementById('evidence-in-this-notice').style.display = "none";
         } else {
-            //document.getElementById('evidence-in-this-notice').style.display = "none";
+            document.getElementById('evidence-in-this-notice').style.display = "block-inline";
         }
+
 
         
         
