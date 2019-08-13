@@ -164,62 +164,6 @@
                 
             </fieldset>
                 
-            <!-- EVIDENCE IN THIS NOTICE -->
-            <fieldset id="evidence-main-group" class="govuk-fieldset" aria-describedby="offence-3-mitigation-hint">
-
-                <h2 class="govuk-heading-m">
-                    Evidence in the paper notice
-                </h2>
-                
-                    <h3 class="govuk-heading-s margin-bottom-0">
-                        Do you disagree with any of the statements in the paper notice sent to you?
-                    </h3>
-                    <p class="govuk-hint">For example, a witness statement</p>
-
-                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="disagree-1" name="disagree" type="radio" value="Yes" data-aria-controls="disagree-conditional-1" {{ checked('disagree','Yes') }}>
-                            <label class="govuk-label govuk-radios__label" for="disagree-1">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="disagree-conditional-1">
-                            
-                            
-                            
-                            
-                            
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-!-font-weight-bold" for="more-detail">
-                                    Tell us what you don't agree with
-                                </label>
-                                
-                                <!--
-                                <textarea class="govuk-textarea" id="disagree-detail" name="disagree-detail" rows="5" aria-describedby="disagree-detail-hint">{{data['disagree-detail']}}</textarea>
-                                -->
-                                
-                                <div class="govuk-character-count margin-bottom-0" data-module="character-count" data-maxlength="1000">
-                                    <div class="govuk-form-group">
-                                        <textarea class="govuk-textarea js-character-count " id="disagree-detail" name="disagree-detail" rows="5" aria-describedby="disagree-detail">{{data['disagree-detail']}}</textarea>
-                                    </div>
-
-                                    <span id="disagree-detail-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
-                                        You can enter up to 200 characters
-                                    </span>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="disagree-2" name="disagree" type="radio" value="No" {{ checked('disagree','No') }}>
-                            <label class="govuk-label govuk-radios__label" for="disagree-2">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                
-            </fieldset>
                 
                 
                 
@@ -228,7 +172,6 @@
                 
                 
                 
-            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
             <button type="submit" class="govuk-button margin-top-0 margin-bottom-15">
                 Continue
